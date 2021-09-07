@@ -57,14 +57,15 @@
 .content__body__features__element1 {
   margin-right: auto;
   border-right: 2px dotted #2eb466;
-  padding-right: 65px;
+  padding-right: 40px;
 }
 .title1 {
-  width: 525px;
+  width: 550px;
+  text-align: right;
 }
 .block1 {
   text-align: right;
-  width: 525px;
+  width: 550px;
   font-size: 24px;
 }
 
