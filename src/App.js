@@ -11,11 +11,9 @@ function App() {
   const scrollRef = useRef(null)
 
   const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
 
   const updateDimensions = () => {
     setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
   }
 
   useEffect(() => {
