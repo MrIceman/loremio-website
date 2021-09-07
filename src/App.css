@@ -106,7 +106,41 @@
   width: 100%;
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1339px) {
+  .content__body__bomber {
+    font-size: 34px;
+  }
+  .content__body__graphic__screenshot {
+    height: 430px;
+  }
+  .content__body__download__play {
+    width: 180px !important;
+  }
+  .content__body__download__apple {
+    width: 180px !important;
+  }
+  .test3 .content__body__bomber > div:not(.content__body__graphic) > img {
+    height: 52px !important;
+  }
+  .content__body__features__title {
+    font-size: 42px;
+    font-weight: bold;
+  }
+  .content__body__features__detail {
+    font-size: 24px;
+  }
+  .title1, .title3 {
+    text-align: right;
+  }
+}
+
+@media (max-width: 1107px) {
+  .content__body__download__play {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 1023px) {
   .content__body {
     padding: 10px 20px 50px 20px;
     width: 100%;
@@ -179,7 +213,7 @@
     margin-right: auto;
     border-bottom: 2px dotted #2eb466;
     padding-right: 0;
-    padding-bottom: 80px;
+    padding-bottom: 140px;
     border-right: 0;
   }
   .title1 {
@@ -196,7 +230,7 @@
     margin-right: auto;
     border-bottom: 2px dotted #2eb466;
     padding-left: 0;
-    padding-bottom: 80px;
+    padding-bottom: 140px;
     border-left: 0;
   }
   .title2 {
@@ -213,7 +247,7 @@
     margin-right: auto;
     border-bottom: 2px dotted #2eb466;
     padding-right: 0;
-    padding-bottom: 80px;
+    padding-bottom: 140px;
     border-right: 0;
   }
   .title3 {
@@ -230,7 +264,7 @@
     margin-right: auto;
     border-bottom: 2px dotted #2eb466;
     padding-right: 0;
-    padding-bottom: 80px;
+    padding-bottom: 140px;
     border-right: 0;
   }
 
@@ -246,14 +280,13 @@
     padding-top: 20px;
   }
   .layout__header__logo__img {
-    width: 30%;
-    max-height: 87px;
-    max-width: 87px;
+    height: auto;
+    max-width: 77px;
+    padding-left: 10px;
   }
   .layout__header__logo__text {
-    width: 70%;
-    max-height: 120px;
-    max-width: 200px;
+    height: auto;
+    max-width: 180px;
   }
 
   .ant-menu-overflow.ant-menu.ant-menu-root.ant-menu-horizontal.ant-menu-light {
@@ -269,7 +302,7 @@
   .ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child {
     opacity: 0 !important;
     height: 0px !important;
-    overflow-y: hidden !important;
+    overflow-x: hidden !important;
     pointer-events: none !important;
     position: absolute !important;
   }

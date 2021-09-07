@@ -11,12 +11,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  width: 100vw !important;
+  height: auto !important;
+  overflow-x: hidden;
+}
+
 code {
   font-family: 'Raleway', sans-serif;
 }
 
 .layout {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .ant-layout-content {

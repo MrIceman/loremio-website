@@ -40,7 +40,7 @@ function App() {
     return (
       <div className="content__body__element">
         <div className="content__body__bomber">
-          {width < 1160 && (
+          {width < 1024 && (
             <>
               <div>Lade <img style={{height:'55px',paddingBottom:'10px'}} src="loremio.png" alt="logo" /> auf Android oder iOS runter.</div>
 
@@ -54,7 +54,7 @@ function App() {
               </div>
             </>
           )}
-          {width > 1159 && (
+          {width > 1023 && (
             <>
               <div style={{ maxWidth: '500px' }}>Lade <img style={{height:'74px',paddingBottom:'15px'}} src="loremio.png" alt="logo" /> auf Android oder iOS runter.
                 <div className="links-container" style={{ marginTop: '30px' }}>
@@ -82,7 +82,7 @@ function App() {
     return (
       <div className="content__body__element">
         <div className="content__body__bomber">
-          {width < 1160 && (
+          {width < 1024 && (
             <>
               <div>Where Eateries and Customers <font style={{ color: '#2eb466', fontWeight: 'bold' }}>Connect.</font></div>
               <div className="content__body__graphic">
@@ -99,7 +99,7 @@ function App() {
               </div>
             </>
           )}
-          {width > 1159 && (
+          {width > 1023 && (
             <>
               <div>Where Eateries and Customers <font style={{ color: '#2eb466', fontWeight: 'bold' }}>Connect.</font>
                 <div className="links-container" style={{ marginTop: '30px' }}>
@@ -158,7 +158,6 @@ function App() {
 
   return (
     <Layout className="layout">
-      {scrollRef.current && console.log(tab, scrollRef.current.className, height, width)}
       <Header className="layout__header">
         <div className="layout__header__logo">
           <img className="layout__header__logo__img" src="chev.png" alt="logo" />
@@ -174,7 +173,7 @@ function App() {
 
       <Content>
         <div className="content__body">
-          <Space align='center' direction='vertical' size={width < 1160 ? 120 : 360}>
+          <Space align='center' direction='vertical' size={width < 1340 ? 180 : 320}>
             <div className='test1' ref={tab === '1' ? scrollRef : null}>
               <ShowÜber />
             </div>
