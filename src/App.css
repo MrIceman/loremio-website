@@ -311,3 +311,15 @@
     border-bottom: 0 !important;
   }
 }
+
+@media (max-width: 340px) {
+  .layout__header__logo__img {
+    height: auto;
+    max-width: 70px;
+    padding-left: 10px;
+  }
+  .layout__header__logo__text {
+    height: auto;
+    max-width: 160px;
+  }
+}
