@@ -107,6 +107,11 @@
   width: 100%;
 }
 
+.content__body__bomber__additional-text {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
 @media (max-width: 1339px) {
   .content__body__bomber {
     font-size: 34px;
@@ -133,9 +138,12 @@
   .title1, .title3 {
     text-align: right;
   }
+  .content__body__bomber__additional-text {
+    font-size: 18px;
+  }
 }
 
-@media (max-width: 1107px) {
+@media (max-width: 1132px) {
   .content__body__download__play {
     margin-bottom: 10px;
   }

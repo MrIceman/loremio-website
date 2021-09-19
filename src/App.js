@@ -40,7 +40,7 @@ function App() {
         <div className="content__body__bomber">
           {width < 1024 && (
             <>
-              <div>Lade <img style={{height:'55px',paddingBottom:'10px'}} src="loremio.png" alt="logo" /> auf Android oder iOS runter.</div>
+              <div>Lade <img style={{ height: '55px', paddingBottom: '10px' }} src="loremio.png" alt="logo" /> auf Android oder iOS runter.</div>
 
               <div className="links-container" style={{ marginTop: '30px' }}>
                 <a href="https://play.google.com/store/apps/details?id=com.loremio.app">
@@ -54,7 +54,7 @@ function App() {
           )}
           {width > 1023 && (
             <>
-              <div style={{ maxWidth: '500px' }}>Lade <img style={{height:'74px',paddingBottom:'15px'}} src="loremio.png" alt="logo" /> auf Android oder iOS runter.
+              <div style={{ maxWidth: '500px' }}>Lade <img style={{ height: '74px', paddingBottom: '15px' }} src="loremio.png" alt="logo" /> auf Android oder iOS runter.
                 <div className="links-container" style={{ marginTop: '30px' }}>
                   <a href="https://play.google.com/store/apps/details?id=com.loremio.app">
                     <img className="content__body__download__play" src="play.png" alt="google" style={{ width: '245px', marginRight: '10px' }} />
@@ -82,7 +82,11 @@ function App() {
         <div className="content__body__bomber">
           {width < 1024 && (
             <>
-              <div>Where Eateries and Customers <font style={{ color: '#2eb466', fontWeight: 'bold' }}>Connect.</font></div>
+              <div>Get a <font style={{ color: '#2eb466', fontWeight: 'bold' }}>push,</font> save food.</div>
+              <div className="content__body__bomber__additional-text">
+                Unsere Vision ist es, dass in den Großstädten Deutschlands und irgendwann in ganz Deutschland kein Essen mehr verschwendet wird, egal ob Gastronomie, Supermarkt, oder Tante Emma Laden um die Ecke.
+                Ziel von Uns ist es diese Unternehmen und Ihre Kundengruppen miteinander zu verbinden um Lebensmittel zu retten.
+              </div>
               <div className="content__body__graphic">
                 <img className="content__body__graphic__screenshot" src="scr1.png" alt="screenshot" />
                 <img className="content__body__graphic__screenshot" src="scr2.png" alt="screenshot" />
@@ -99,7 +103,11 @@ function App() {
           )}
           {width > 1023 && (
             <>
-              <div>Where Eateries and Customers <font style={{ color: '#2eb466', fontWeight: 'bold' }}>Connect.</font>
+              <div style={{ marginRight: '25px' }}>Get a <font style={{ color: '#2eb466', fontWeight: 'bold' }}>push</font>, save food.
+                <div className="content__body__bomber__additional-text">
+                  Unsere Vision ist es, dass in den Großstädten Deutschlands und irgendwann in ganz Deutschland kein Essen mehr verschwendet wird, egal ob Gastronomie, Supermarkt, oder Tante Emma Laden um die Ecke.
+                  Ziel von Uns ist es diese Unternehmen und Ihre Kundengruppen miteinander zu verbinden um Lebensmittel zu retten.
+                </div>
                 <div className="links-container" style={{ marginTop: '30px' }}>
                   <a href="https://play.google.com/store/apps/details?id=com.loremio.app">
                     <img className="content__body__download__play" src="play.png" alt="google" style={{ width: '245px', marginRight: '10px' }} />
@@ -125,24 +133,16 @@ function App() {
       <div className="content__body__element">
         <div className="content__body__features">
           <div className="content__body__features__element1 element">
-            <div className="content__body__features__title title1">Push Nachrichten</div>
+            <div className="content__body__features__title title1">Sei ein Lebensmittelretter</div>
             <div className="content__body__features__detail block1">
-              Du bekommst eine Push-Benachrichtigung bei jeder neuen Aktion, die dein Händler in die Kanki Plattform stellt. Natürlich kannst du diese auch Stumm- oder gar Abschalten.
+              Erhalte von deinen Händlern mit den du dich gekoppelt hast stetig neue Lebensmittelangebote. Dies können Gerichte, Lebensmittel wie Obst und Gemüse sein die der Händler aufgrund von Schönheitsfehlern oder kurz vor Ablaufdatum nicht mehr verkaufen. Der Händler sendet dir die Angebote zu stark reduzierten Preisen. So könnt Ihr beide einen Beitrag zur Reduzierung der Lebensmittelverschwendung beitragen!
             </div>
           </div>
 
           <div className="content__body__features__element2 element">
             <div className="content__body__features__title title2">Du bist ein Abenteurer?</div>
             <div className="content__body__features__detail block2">
-              Du kannst selbst konfigurieren, ob du auch Aktionen von Händlern in deiner Nähe bekommen möchtest, mit denen du noch nicht gekoppelt bist. Perfekt, wenn du verreist.
-            </div>
-          </div>
-
-
-          <div className="content__body__features__element3 element">
-            <div className="content__body__features__title title3">Lebensmittelretter</div>
-            <div className="content__body__features__detail block3">
-              Angebote können auch Lebensmittel sein (z.B. Fleisch von der Dönerbude) , die noch perfekt genießbar sind, jedoch auf Grund von Gesetzen am nächsten Tag entsorgt werden müssen. Rette das Essen und genieß den Döner.
+              Du kannst selbst konfigurieren, ob du auch Aktionen von Händlern in deiner Nähe bekommen möchtest, mit denen du noch nicht gekoppelt bist. Ideal wenn du verreist.
             </div>
           </div>
 
@@ -162,7 +162,7 @@ function App() {
           <img className="layout__header__logo__text" src="loremio.png" alt="logo" />
         </div>
         <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
-          <Menu.Item key='1'>Über</Menu.Item>
+          <Menu.Item key='1'>Unternehmen</Menu.Item>
           <Menu.Item key='2'>Features</Menu.Item>
           {/**<Menu.Item key='3'>Anleitung</Menu.Item>**/}
           <Menu.Item key='4'>Hol die App</Menu.Item>
