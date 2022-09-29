@@ -226,7 +226,7 @@ function App() {
       </Content>
 
 
-      <Footer>Scio.AI ©2021</Footer>
+      <Footer>Nowocode ©2022</Footer>
     </Layout>
   );
 }
