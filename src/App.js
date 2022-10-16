@@ -9,6 +9,29 @@ function App() {
 
   const [tab, setTab] = useState('0')
   const scrollRef = useRef(null)
+  const [offerResponse, setOfferResponse] = useState({
+    "id": 137,
+    "productID": 22,
+    "vendorID": 36,
+    "createdAt": "2022-10-12T18:15:57.949227Z",
+    "updatedAt": "2022-10-12T18:15:57.949227Z",
+    "deletedAt": null,
+    "price": 9.99,
+    "views": 0,
+    "isActive": true,
+    "product": {
+      "id": 22,
+      "name": "chicken",
+      "description": "habibu",
+      "createdAt": "2022-10-12T18:15:48.659695Z",
+      "updatedAt": "2022-10-12T18:15:48.659695Z",
+      "deletedAt": null,
+      "vendorId": 36,
+      "pictureUrl": "https://production-vendor-image.s3.eu-central-1.amazonaws.com/bvxc5cKl00Y3OrXcbjjA5Dd6UkU2_chicken.png",
+      "category": "food"
+    }
+  })
+  const [showOffer, setShowOffer] = useState(!!offerResponse)
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -26,6 +49,11 @@ function App() {
   const navigate = (e) => {
     setTab(e.key)
   }
+
+  useEffect(() => {
+    const offer = window.location.href.substring(window.location.href.indexOf('=') + 1);
+    console.log(offer);
+  }, [])
 
   useEffect(() => {
     if (tab !== '0') {
@@ -170,64 +198,95 @@ function App() {
     )
   }
 
+  const Offer = ({ offerResponse }) => {
+    return (
+      <>
+        <div style={{ position: 'fixed', zIndex: '2', background: 'rgba(0,0,0,0.5)', height: '100vh', width: '100vw', padding: '10%' }}>
+          <div style={{ height: '100%', display: 'flex', background: 'white', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
+            <div onClick={() => setShowOffer(false)} className='close'>
+              <svg aria-label="Close" class="x1n2onr6 x1lliihq" color="#ffffff" fill="#ffffff" height="18" role="img" viewBox="0 0 48 48" width="18"><title>Close</title><path clip-rule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fill-rule="evenodd"></path></svg>
+            </div>
+            <div style={{ display: 'flex', alignContent: 'center', width: '50%', background: 'black' }}>
+              <img style={{ width: '100%', objectFit: 'contain' }} src={offerResponse?.product?.pictureUrl} alt='' />
+            </div>
+            <div style={{ width: '50%', padding: '10px' }}>
+              <div style={{ fontSize: '2rem' }}>{offerResponse?.product?.name}</div>
+              <div>{new Date(offerResponse.createdAt).toLocaleString()}</div>
+              <div style={{ marginTop: '25px' }}>
+                {offerResponse?.product?.description}
+              </div>
+              <div style={{ marginTop: '25px', textAlign: 'end', fontWeight: 'bold' }}>{offerResponse?.price} €</div>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  }
+
   return (
-    <Layout className="layout">
-      <Header className="layout__header">
-        <div className="layout__header__logo">
-          <img className="layout__header__logo__text" src="loremio.png" alt="logo" />
-        </div>
-        <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
-          <Menu.Item key='1'>Unternehmen</Menu.Item>
-          <Menu.Item key='2'>Features</Menu.Item>
-          {/**<Menu.Item key='3'>Anleitung</Menu.Item>**/}
-          <Menu.Item key='4'>Hol die App</Menu.Item>
-        </Menu>
-      </Header>
+    <>
+      {offerResponse && showOffer &&
+        <Offer offerResponse={offerResponse} />
+      }
+      <Layout className="layout">
+        <Header className="layout__header">
+          <div className="layout__header__logo">
+            <img className="layout__header__logo__text" src="loremio.png" alt="logo" />
+          </div>
+          <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
+            <Menu.Item key='1'>Unternehmen</Menu.Item>
+            <Menu.Item key='2'>Features</Menu.Item>
+            {/**<Menu.Item key='3'>Anleitung</Menu.Item>**/}
+            <Menu.Item key='4'>Hol die App</Menu.Item>
+          </Menu>
+        </Header>
 
-      <Content>
-        <div className="content__body">
-          <Space align='center' direction='vertical' size={width < 1340 ? 180 : 320}>
-            <div ref={tab === '1' ? scrollRef : null}>
-              <ShowÜber />
-            </div>
-            <div ref={tab === '2' ? scrollRef : null}>
-              <ShowFeatures />
-            </div>
-            <div>
-              <img style={{ width: '100%' }} src="src3.png" alt="logo" />
-            </div>
-
-            <div class="feature-wrap icons">
-              <div class="feature-content icons">
-                <img src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c157f771ce3_icon-burger-magenta.svg" width="80" alt="" class="feature-icon" />
-                <h4 class="black-text">Kundenbeziehung</h4>
-                <p class="paragraph-10">Durch den direkten Kontakt mit den Kunden, von welchen Sie auch erreicht werden wollen, stärken Sie die&nbsp;Kundenbeziehung. Sie haben so die Gelegenheit langfristig mit Ihren Kunden in Kommunikation zu bleiben</p>
+        <Content>
+          <div className="content__body">
+            <Space align='center' direction='vertical' size={width < 1340 ? 180 : 320}>
+              <div ref={tab === '1' ? scrollRef : null}>
+                <ShowÜber />
               </div>
-              <div class="feature-content icons">
-                <img src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg" width="74" alt="" class="feature-icon" />
-                <h4 class="black-text">Absatz- und Werbekanal</h4>
-                <p class="paragraph-9">Mit Loremio bietet sich Ihnen nicht nur eine Möglichkeit für persönliche Werbung - sondern Sie können&nbsp;Ihre Einträge bei Loremio auf Instagram und Facebook veröffentlichen</p>
+              <div ref={tab === '2' ? scrollRef : null}>
+                <ShowFeatures />
               </div>
-              <div class="feature-content icons">
-                <img src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg" alt="" class="feature-icon" />
-                <h4 class="black-text">Digitalisierung</h4>
-                <p class="paragraph-8">Ihnen wird nicht nur für Ihr Unternehmen eine digitale Präsenz geboten, sondern auch für Ihre Aktionen und Angebote. Die Informationen sind nicht nur über die mobile Applikation aufrufbar, sondern auch übers Web.</p>
+              <div>
+                <img style={{ width: '100%' }} src="src3.png" alt="logo" />
               </div>
-            </div>
+
+              <div class="feature-wrap icons">
+                <div class="feature-content icons">
+                  <img src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c157f771ce3_icon-burger-magenta.svg" width="80" alt="" class="feature-icon" />
+                  <h4 class="black-text">Kundenbeziehung</h4>
+                  <p class="paragraph-10">Durch den direkten Kontakt mit den Kunden, von welchen Sie auch erreicht werden wollen, stärken Sie die&nbsp;Kundenbeziehung. Sie haben so die Gelegenheit langfristig mit Ihren Kunden in Kommunikation zu bleiben</p>
+                </div>
+                <div class="feature-content icons">
+                  <img src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg" width="74" alt="" class="feature-icon" />
+                  <h4 class="black-text">Absatz- und Werbekanal</h4>
+                  <p class="paragraph-9">Mit Loremio bietet sich Ihnen nicht nur eine Möglichkeit für persönliche Werbung - sondern Sie können&nbsp;Ihre Einträge bei Loremio auf Instagram und Facebook veröffentlichen</p>
+                </div>
+                <div class="feature-content icons">
+                  <img src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg" alt="" class="feature-icon" />
+                  <h4 class="black-text">Digitalisierung</h4>
+                  <p class="paragraph-8">Ihnen wird nicht nur für Ihr Unternehmen eine digitale Präsenz geboten, sondern auch für Ihre Aktionen und Angebote. Die Informationen sind nicht nur über die mobile Applikation aufrufbar, sondern auch übers Web.</p>
+                </div>
+              </div>
 
 
-            <div ref={tab === '4' ? scrollRef : null}>
-              <HolDieApp />
-            </div>
+              <div ref={tab === '4' ? scrollRef : null}>
+                <HolDieApp />
+              </div>
 
-          </Space>
-        </div>
+            </Space>
+          </div>
 
-      </Content>
+        </Content>
 
 
-      <Footer>Nowocode ©2022</Footer>
-    </Layout>
+        <Footer>Nowocode ©2022</Footer>
+      </Layout>
+    </>
+
   );
 }
 
