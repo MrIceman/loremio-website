@@ -1,20 +1,43 @@
-import {Layout, Menu, Space} from 'antd';
+import { Layout, Menu, Space } from 'antd';
 import './App.css';
 import '../src/style/custom-antd.css';
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const {Header, Content, Footer} = Layout
+const { Header, Content, Footer } = Layout
 
 function App() {
 
-    const [tab, setTab] = useState('0')
-    const scrollRef = useRef(null)
-
-    const [width, setWidth] = useState(window.innerWidth);
-
-    const updateDimensions = () => {
-        setWidth(window.innerWidth);
+  const [tab, setTab] = useState('0')
+  const scrollRef = useRef(null)
+  const [offerResponse, setOfferResponse] = useState({
+    "id": 137,
+    "productID": 22,
+    "vendorID": 36,
+    "createdAt": "2022-10-12T18:15:57.949227Z",
+    "updatedAt": "2022-10-12T18:15:57.949227Z",
+    "deletedAt": null,
+    "price": 9.99,
+    "views": 0,
+    "isActive": true,
+    "product": {
+      "id": 22,
+      "name": "chicken",
+      "description": "habibu",
+      "createdAt": "2022-10-12T18:15:48.659695Z",
+      "updatedAt": "2022-10-12T18:15:48.659695Z",
+      "deletedAt": null,
+      "vendorId": 36,
+      "pictureUrl": "https://production-vendor-image.s3.eu-central-1.amazonaws.com/bvxc5cKl00Y3OrXcbjjA5Dd6UkU2_chicken.png",
+      "category": "food"
     }
+  })
+  const [showOffer, setShowOffer] = useState(!!offerResponse)
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  }
 
     const heroTitle = "Gemeinsam für die Region.  Die neusten Angebote aus deiner Umgebung.";
     const heroCaption = "Lasst uns nicht nur die Innenstädte, sondern auch die kleineren Regionen wieder zu belebten Orten machen! " +
@@ -26,18 +49,23 @@ function App() {
         return () => window.removeEventListener("resize", updateDimensions);
     }, []);
 
-    const executeScroll = () => scrollRef?.current.scrollIntoView({behavior: "smooth"})
+  const executeScroll = () => scrollRef?.current.scrollIntoView({ behavior: "smooth" })
 
-    const navigate = (e) => {
-        setTab(e.key)
+  const navigate = (e) => {
+    setTab(e.key)
+  }
+
+  useEffect(() => {
+    const offer = window.location.href.substring(window.location.href.indexOf('=') + 1);
+    console.log(offer);
+  }, [])
+
+  useEffect(() => {
+    if (tab !== '0') {
+      executeScroll()
+      setTab('0')
     }
-
-    useEffect(() => {
-        if (tab !== '0') {
-            executeScroll()
-            setTab('0')
-        }
-    }, [tab])
+  }, [tab])
 
     const HolDieApp = () => {
         return (
@@ -188,30 +216,52 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="content__body__features__element4">
-                        <font style={{color: '#ffad4e', fontWeight: 'bold'}}>> 30.000</font> Nutzer | <font
-                        style={{color: '#ffad4e', fontWeight: 'bold'}}>> 2.000</font> Händler | <font
-                        style={{color: '#ffad4e', fontWeight: 'bold'}}>3</font> Angebote pro Minute | <font
-                        style={{color: '#ffad4e', fontWeight: 'bold'}}>> 10.000</font> Angebote
-                    </div>
-                </div>
-            </div>
-        )
-    }
+          <div className="content__body__features__element4">
+            <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>>100k</font> Nutzer | <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>>30k</font> Händler | <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>15,6</font> neue Angebote pro Minute | <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>350k</font> erstellte Angebote
+          </div>
+        </div>
+      </div>
+    )
+  }
 
+  const Offer = ({ offerResponse }) => {
     return (
-        <Layout className="layout">
-            <Header className="layout__header">
-                <div className="layout__header__logo">
-                    <img className="layout__header__logo__text" src="loremio.png" alt="logo"/>
-                </div>
-                <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
-                    <Menu.Item key='1'>Unternehmen</Menu.Item>
-                    <Menu.Item key='2'>Features</Menu.Item>
-                    {/**<Menu.Item key='3'>Anleitung</Menu.Item>**/}
-                    <Menu.Item key='4'>Hol die App</Menu.Item>
-                </Menu>
-            </Header>
+      <>
+        <div style={{ position: 'fixed', zIndex: '2', background: 'rgba(0,0,0,0.5)', height: '100vh', width: '100vw', padding: '10%' }}>
+          <div style={{ height: '100%', display: 'flex', background: 'white', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
+            <div onClick={() => setShowOffer(false)} className='close'>
+              <svg aria-label="Close" class="x1n2onr6 x1lliihq" color="#ffffff" fill="#ffffff" height="18" role="img" viewBox="0 0 48 48" width="18"><title>Close</title><path clip-rule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fill-rule="evenodd"></path></svg>
+            </div>
+            <div style={{ display: 'flex', alignContent: 'center', width: '50%', background: 'black' }}>
+              <img style={{ width: '100%', objectFit: 'contain' }} src={offerResponse?.product?.pictureUrl} alt='' />
+            </div>
+            <div style={{ width: '50%', padding: '10px' }}>
+              <div style={{ fontSize: '2rem' }}>{offerResponse?.product?.name}</div>
+              <div>{new Date(offerResponse.createdAt).toLocaleString()}</div>
+              <div style={{ marginTop: '25px' }}>
+                {offerResponse?.product?.description}
+              </div>
+              <div style={{ marginTop: '25px', textAlign: 'end', fontWeight: 'bold' }}>{offerResponse?.price} €</div>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <Layout className="layout">
+      <Header className="layout__header">
+        <div className="layout__header__logo">
+          <img className="layout__header__logo__text" src="loremio.png" alt="logo" />
+        </div>
+        <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
+          <Menu.Item key='1'>Unternehmen</Menu.Item>
+          <Menu.Item key='2'>Features</Menu.Item>
+          {/**<Menu.Item key='3'>Anleitung</Menu.Item>**/}
+          <Menu.Item key='4'>Hol die App</Menu.Item>
+        </Menu>
+      </Header>
 
             <Content>
                 <div className="content__body">
@@ -266,7 +316,7 @@ function App() {
             </Content>
 
 
-            <Footer>Nowocode ©2022</Footer>
+            <Footer>Nowocode © 2022</Footer>
         </Layout>
     );
 }

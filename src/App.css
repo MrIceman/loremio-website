@@ -12,6 +12,20 @@
   height: 50%;
 }
 
+.close {
+  position: absolute;
+  width: 25px;
+  /* background: white; */
+  height: 25px;
+  text-align: center;
+  border-radius: 100px;
+  font-weight: bold;
+  left: 90%;
+  top: 8%;
+  /* box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px; */
+  color: white;
+}
+
 .content__body {
   min-height: 280px;
   padding: 145px;
