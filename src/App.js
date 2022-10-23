@@ -1,10 +1,10 @@
-import { Layout, Menu, Space } from 'antd';
+import {Layout, Menu, Space} from 'antd';
 import './App.css';
 import '../src/style/custom-antd.css';
-import { useEffect, useRef, useState } from 'react';
-import { getPush } from './data/vendor';
+import {useEffect, useRef, useState} from 'react';
+import {getPush} from './data/vendor';
 
-const { Header, Content, Footer } = Layout
+const {Header, Content, Footer} = Layout
 
 function App() {
 
@@ -23,13 +23,14 @@ function App() {
     const heroCaption = "Lasst uns nicht nur die Innenstädte, sondern auch die kleineren Regionen wieder zu belebten Orten machen! " +
         "Wir verbinden dich mit deinem Lieblingsitaliener oder Friseur. Verpasse nie wieder eine Aktion oder ein neues Angebot.";
     const playstoreLink = "https://play.google.com/store/apps/details?id=de.loremio.loremio"
+    const appleLink = "https://apps.apple.com/de/app/loremio/id1633791030"
 
     useEffect(() => {
         window.addEventListener("resize", updateDimensions);
         return () => window.removeEventListener("resize", updateDimensions);
     }, []);
 
-    const executeScroll = () => scrollRef?.current.scrollIntoView({ behavior: "smooth" })
+    const executeScroll = () => scrollRef?.current.scrollIntoView({behavior: "smooth"})
 
     const navigate = (e) => {
         setTab(e.key)
@@ -58,40 +59,40 @@ function App() {
                 <div className="content__body__bomber">
                     {width < 1024 && (
                         <>
-                            <div>Lade <img style={{ height: '55px', paddingBottom: '5px' }} src="loremio.png"
-                                alt="logo" /> auf Android oder iOS runter.
+                            <div>Lade <img style={{height: '55px', paddingBottom: '5px'}} src="loremio.png"
+                                           alt="logo"/> auf Android oder iOS runter.
                             </div>
 
-                            <div className="links-container" style={{ marginTop: '30px' }}>
+                            <div className="links-container" style={{marginTop: '30px'}}>
                                 <a href={playstoreLink}>
                                     <img className="content__body__download__play" src="play.png" alt="google"
-                                        style={{ width: '200px', marginRight: '10px' }} />
+                                         style={{width: '200px', marginRight: '10px'}}/>
                                 </a>
-                                <a href="https://apps.apple.com/de/app/loremio/id1582366441">
+                                <a href={appleLink}>
                                     <img className="content__body__download__apple" src="app.png" alt="apple"
-                                        style={{ width: '200px' }} />
+                                         style={{width: '200px'}}/>
                                 </a>
                             </div>
                         </>
                     )}
                     {width > 1023 && (
                         <>
-                            <div style={{ maxWidth: '900px' }}>Lade <img style={{ height: '65px', paddingBottom: '10px' }}
-                                src="loremio.png" alt="logo" /> auf Android oder
+                            <div style={{maxWidth: '900px'}}>Lade <img style={{height: '65px', paddingBottom: '10px'}}
+                                                                       src="loremio.png" alt="logo"/> auf Android oder
                                 iOS runter.
-                                <div className="links-container" style={{ marginTop: '30px' }}>
+                                <div className="links-container" style={{marginTop: '30px'}}>
                                     <a href={playstoreLink}>
                                         <img className="content__body__download__play" src="play.png" alt="google"
-                                            style={{ width: '245px', marginRight: '10px' }} />
+                                             style={{width: '245px', marginRight: '10px'}}/>
                                     </a>
-                                    <a href="https://apps.apple.com/de/app/loremio/id1582366441">
+                                    <a href={appleLink}>
                                         <img className="content__body__download__apple" src="app.png" alt="apple"
-                                            style={{ width: '245px' }} />
+                                             style={{width: '245px'}}/>
                                     </a>
                                 </div>
                             </div>
                             <div className="content__body__graphic">
-                                <img className="content__body__graphic__screenshot" src="src2.png" alt="screenshot" />
+                                <img className="content__body__graphic__screenshot" src="src2.png" alt="screenshot"/>
                             </div>
                         </>
                     )}
@@ -107,45 +108,45 @@ function App() {
                 <div className="content__body__bomber">
                     {width < 1024 && (
                         <>
-                            <div><font style={{ fontWeight: 'bold', color: '#ffad4e' }}>{heroTitle}</font></div>
+                            <div><font style={{fontWeight: 'bold', color: '#ffad4e'}}>{heroTitle}</font></div>
                             <div className="content__body__bomber__additional-text">
                                 {heroCaption}
                             </div>
                             <div className="content__body__graphic">
-                                <img className="content__body__graphic__screenshot" src="src1.png" alt="screenshot" />
+                                <img className="content__body__graphic__screenshot" src="src1.png" alt="screenshot"/>
                             </div>
-                            <div className="links-container" style={{ marginTop: '30px' }}>
+                            <div className="links-container" style={{marginTop: '30px'}}>
                                 <a href={playstoreLink}>
                                     <img className="content__body__download__play" src="play.png" alt="google"
-                                        style={{ width: '200px', marginRight: '10px' }} />
+                                         style={{width: '200px', marginRight: '10px'}}/>
                                 </a>
-                                <a href="https://apps.apple.com/de/app/loremio/id1582366441">
+                                <a href={appleLink}>
                                     <img className="content__body__download__apple" src="app.png" alt="apple"
-                                        style={{ width: '200px' }} />
+                                         style={{width: '200px'}}/>
                                 </a>
                             </div>
                         </>
                     )}
                     {width > 1023 && (
                         <>
-                            <div style={{ marginRight: '25px' }}><font
-                                style={{ fontWeight: 'bold', color: '#ffad4e' }}>{heroTitle}</font>
+                            <div style={{marginRight: '25px'}}><font
+                                style={{fontWeight: 'bold', color: '#ffad4e'}}>{heroTitle}</font>
                                 <div className="content__body__bomber__additional-text">
                                     {heroCaption}
                                 </div>
-                                <div className="links-container" style={{ marginTop: '30px' }}>
+                                <div className="links-container" style={{marginTop: '30px'}}>
                                     <a href={playstoreLink}>
                                         <img className="content__body__download__play" src="play.png" alt="google"
-                                            style={{ width: '245px', marginRight: '10px' }} />
+                                             style={{width: '245px', marginRight: '10px'}}/>
                                     </a>
-                                    <a href="https://apps.apple.com/de/app/loremio/id1582366441">
+                                    <a href={appleLink}>
                                         <img className="content__body__download__apple" src="app.png" alt="apple"
-                                            style={{ width: '245px' }} />
+                                             style={{width: '245px'}}/>
                                     </a>
                                 </div>
                             </div>
                             <div className="content__body__graphic">
-                                <img className="content__body__graphic__screenshot" src="src1.png" alt="screenshot" />
+                                <img className="content__body__graphic__screenshot" src="src1.png" alt="screenshot"/>
                             </div>
                         </>
                     )}
@@ -202,31 +203,45 @@ function App() {
                     </div>
 
                     <div className="content__body__features__element4">
-                        <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>>100k</font> Nutzer | <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>>30k</font> Händler | <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>15,6</font> neue Angebote pro Minute | <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>350k</font> erstellte Angebote
+                        <font style={{color: '#ffad4e', fontWeight: 'bold'}}>>100k</font> Nutzer | <font
+                        style={{color: '#ffad4e', fontWeight: 'bold'}}>>30k</font> Händler | <font
+                        style={{color: '#ffad4e', fontWeight: 'bold'}}>15,6</font> neue Angebote pro Minute | <font
+                        style={{color: '#ffad4e', fontWeight: 'bold'}}>350k</font> erstellte Angebote
                     </div>
                 </div>
             </div>
         )
     }
 
-    const Offer = ({ offerResponse }) => {
+    const Offer = ({offerResponse}) => {
         return (
             <>
                 <div className='offerWrapper'>
                     <div className='offerWrapperContent'>
                         <div onClick={() => setShowOffer(false)} className='close'>
-                            <svg aria-label="Close" className="x1n2onr6 x1lliihq" color="#ffffff" fill="#ffffff" height="18" role="img" viewBox="0 0 48 48" width="18"><title>Close</title><path clipRule="evenodd" d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z" fillRule="evenodd"></path></svg>
+                            <svg aria-label="Close" className="x1n2onr6 x1lliihq" color="#ffffff" fill="#ffffff"
+                                 height="18" role="img" viewBox="0 0 48 48" width="18"><title>Close</title>
+                                <path clipRule="evenodd"
+                                      d="M41.8 9.8L27.5 24l14.2 14.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.6.6-1.5.6-2.1 0L24 27.5 9.8 41.8c-.6.6-1.5.6-2.1 0l-1.4-1.4c-.6-.6-.6-1.5 0-2.1L20.5 24 6.2 9.8c-.6-.6-.6-1.5 0-2.1l1.4-1.4c.6-.6 1.5-.6 2.1 0L24 20.5 38.3 6.2c.6-.6 1.5-.6 2.1 0l1.4 1.4c.6.6.6 1.6 0 2.2z"
+                                      fillRule="evenodd"></path>
+                            </svg>
                         </div>
                         <div className='offerWrapperContentImage'>
-                            <img style={{ width: '100%', objectFit: 'contain' }} src={offerResponse?.product?.pictureUrl} alt='' />
+                            <img style={{width: '100%', objectFit: 'contain'}} src={offerResponse?.product?.pictureUrl}
+                                 alt=''/>
                         </div>
                         <div className='offerWrapperContentText'>
-                            <div style={{ fontSize: '2rem' }}>{offerResponse?.product?.name}</div>
+                            <div style={{fontSize: '2rem'}}>{offerResponse?.product?.name}</div>
                             <div>{new Date(offerResponse.createdAt).toLocaleString()}</div>
-                            <div style={{ marginTop: '25px' }}>
+                            <div style={{marginTop: '25px'}}>
                                 {offerResponse?.product?.description}
                             </div>
-                            <div style={{ marginTop: '25px', textAlign: 'end', fontWeight: 'bold' }}>{offerResponse?.price} €</div>
+                            <div style={{
+                                marginTop: '25px',
+                                textAlign: 'end',
+                                fontWeight: 'bold'
+                            }}>{offerResponse?.price} €
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,13 +253,13 @@ function App() {
         <>
 
             {offerResponse && showOffer &&
-                <Offer offerResponse={offerResponse} />
+                <Offer offerResponse={offerResponse}/>
             }
 
             <Layout className="layout">
                 <Header className="layout__header">
                     <div className="layout__header__logo">
-                        <img className="layout__header__logo__text" src="loremio.png" alt="logo" />
+                        <img className="layout__header__logo__text" src="loremio.png" alt="logo"/>
                     </div>
                     <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
                         <Menu.Item key='1'>Unternehmen</Menu.Item>
@@ -258,47 +273,52 @@ function App() {
                     <div className="content__body">
                         <Space align='center' direction='vertical' size={width < 1340 ? 180 : 320}>
                             <div ref={tab === '1' ? scrollRef : null}>
-                                <ShowÜber />
+                                <ShowÜber/>
                             </div>
                             <div ref={tab === '2' ? scrollRef : null}>
-                                <ShowFeatures />
+                                <ShowFeatures/>
                             </div>
                             <div>
-                                <img style={{ width: '100%' }} src="src3.png" alt="logo" />
+                                <img style={{width: '100%'}} src="src3.png" alt="logo"/>
                             </div>
                             <div className="feature-wrap icons">
                                 <div className="feature-content icons">
                                     <img
                                         src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c157f771ce3_icon-burger-magenta.svg"
-                                        width="80" alt="" className="feature-icon" />
+                                        width="80" alt="" className="feature-icon"/>
                                     <h4 className="black-text">Kundenbeziehung</h4>
-                                    <p className="paragraph-10">Deine Angebote erreichen innerhalb Sekunden nicht nur deine
-                                        Stammkundschaft und all jene, die deinem Unternehmen folgen, sie sind auch sichtbar
+                                    <p className="paragraph-10">Deine Angebote erreichen innerhalb Sekunden nicht nur
+                                        deine
+                                        Stammkundschaft und all jene, die deinem Unternehmen folgen, sie sind auch
+                                        sichtbar
                                         für jeden Loremio-Nutzer im Umkreis von 100km.</p>
                                 </div>
                                 <div className="feature-content icons">
                                     <img
                                         src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg"
-                                        width="74" alt="" className="feature-icon" />
+                                        width="74" alt="" className="feature-icon"/>
                                     <h4 className="black-text">Absatz- und Werbekanal</h4>
-                                    <p className="paragraph-9">Du erhältst einen exklusiven Werbekanal - die Taschen deiner
+                                    <p className="paragraph-9">Du erhältst einen exklusiven Werbekanal - die Taschen
+                                        deiner
                                         Stammkundschaft! Wir stellen sicher, dass deine Angebote auch wirklich die
                                         erreichen, die sie sehen möchten.</p>
                                 </div>
                                 <div className="feature-content icons">
                                     <img
                                         src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg"
-                                        alt="" className="feature-icon" />
+                                        alt="" className="feature-icon"/>
                                     <h4 className="black-text">Digitalisierung</h4>
-                                    <p className="paragraph-8">Ihnen wird nicht nur für Ihr Unternehmen eine digitale Präsenz
-                                        geboten, sondern auch für Ihre Aktionen und Angebote. Die Informationen sind nicht
+                                    <p className="paragraph-8">Ihnen wird nicht nur für Ihr Unternehmen eine digitale
+                                        Präsenz
+                                        geboten, sondern auch für Ihre Aktionen und Angebote. Die Informationen sind
+                                        nicht
                                         nur über die mobile Applikation aufrufbar, sondern auch übers Web.</p>
                                 </div>
                             </div>
 
 
                             <div ref={tab === '4' ? scrollRef : null}>
-                                <HolDieApp />
+                                <HolDieApp/>
                             </div>
 
                         </Space>
