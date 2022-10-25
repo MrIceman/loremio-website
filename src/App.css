@@ -202,11 +202,16 @@
 }
 
 .password_reset__form {
-  max-width: 300px;
   margin: auto;
   border: 1px solid lightgray;
   border-radius: 5px;
   padding: 25px;
+}
+
+@media (min-width: 1024px) {
+  .password_reset__form {
+    max-width: 350px;
+  }
 }
 
 @media (max-width: 1339px) {
