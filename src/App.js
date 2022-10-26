@@ -50,7 +50,7 @@ function App() {
     const email = window.location.href.indexOf('/profile/reset/') !== -1 ?
       window.location.href.substring(
         window.location.href.indexOf("/profile/reset/") + 15,
-        window.location.href.lastIndexOf("/?mode=action&oobCode=")
+        window.location.href.lastIndexOf("/?mode=resetPassword&oobCode=")
       ) : -1;
     const oobCode = window.location.href.substring(window.location.href.indexOf("oobCode=") + 8)
     if (email !== -1) {
