@@ -215,10 +215,10 @@ function App() {
           </div>
 
           <div className="content__body__features__element4">
-            <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>>100k</font> Nutzer | <font
-              style={{ color: '#ffad4e', fontWeight: 'bold' }}>>30k</font> Händler | <font
-                style={{ color: '#ffad4e', fontWeight: 'bold' }}>15,6</font> neue Angebote pro Minute | <font
-                  style={{ color: '#ffad4e', fontWeight: 'bold' }}>350k</font> erstellte Angebote
+            <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>>-</font> Nutzer | <font
+              style={{ color: '#ffad4e', fontWeight: 'bold' }}>>-</font> Händler | <font
+                style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> neue Angebote pro Minute | <font
+                  style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> erstellte Angebote
           </div>
         </div>
       </div>
