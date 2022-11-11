@@ -47,9 +47,6 @@ const PWReset = (props) => {
                             },
                             ({getFieldValue}) => ({
                                 validator(_, value) {
-                                    if (!value || getFieldValue('password') === value) {
-                                        return resetPw(getFieldValue("password"), props.oobCode);
-                                    }
                                     return Promise.reject(new Error('Passwörter müssen identisch sein'));
                                 },
                             }),
