@@ -4,6 +4,7 @@ import '../src/style/custom-antd.css';
 import { useEffect, useRef, useState } from 'react';
 import { getPush } from './data/vendor';
 import PWReset from './PWReset';
+import logo from './assets/loremio.png';
 
 const { Header, Content, Footer } = Layout
 
@@ -71,7 +72,7 @@ function App() {
         <div className="content__body__bomber">
           {width < 1024 && (
             <>
-              <div>Lade <img style={{ height: '55px', paddingBottom: '5px' }} src="loremio.png"
+              <div>Lade <img style={{ height: '55px', paddingBottom: '5px' }} src={logo}
                 alt="logo" /> auf Android oder iOS runter.
               </div>
 
@@ -90,7 +91,7 @@ function App() {
           {width > 1023 && (
             <>
               <div style={{ maxWidth: '900px' }}>Lade <img style={{ height: '65px', paddingBottom: '10px' }}
-                src="loremio.png" alt="logo" /> auf Android oder
+                src={logo} alt="logo" /> auf Android oder
                 iOS runter.
                 <div className="links-container" style={{ marginTop: '30px' }}>
                   <a href={playstoreLink}>
@@ -215,8 +216,8 @@ function App() {
           </div>
 
           <div className="content__body__features__element4">
-            <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>>-</font> Nutzer | <font
-              style={{ color: '#ffad4e', fontWeight: 'bold' }}>>-</font> Händler | <font
+            <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> Nutzer | <font
+              style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> Händler | <font
                 style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> neue Angebote pro Minute | <font
                   style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> erstellte Angebote
           </div>
@@ -271,7 +272,7 @@ function App() {
       <Layout className="layout">
         <Header className="layout__header">
           <div className="layout__header__logo">
-            <img className="layout__header__logo__text" src="loremio.png" alt="logo" />
+            <img className="layout__header__logo__text" src={logo} alt="logo" />
           </div>
 
           {!showPWReset && <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
