@@ -1,6 +1,6 @@
 export const resetPw = async (password, oobCode) => {
     const resp = await fetch(
-        `https://spddb7biyj.execute-api.eu-central-1.amazonaws.com/production/profile/reset`,
+        `https://spddb7biyj.execute-api.eu-central-1.amazonaws.com/production/auth/reset`,
         {
             method: "POST",
             body: {

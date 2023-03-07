@@ -1,7 +1,6 @@
 import React from 'react';
 import {LockOutlined, UnlockOutlined} from '@ant-design/icons';
 import {Button, Form, Input} from 'antd';
-import {resetPw} from "./data/resetPw";
 
 
 const PWReset = (props) => {
