@@ -1,7 +1,7 @@
 import { Avatar, Button, Layout, Menu, Space } from 'antd';
 import './App.css';
 import '../src/style/custom-antd.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getPush } from './data/vendor';
 import PWReset from './PWReset';
 import logo from './assets/loremio.png';
