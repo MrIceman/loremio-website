@@ -1,4 +1,4 @@
-import { Layout, Menu, Space } from 'antd';
+import { Avatar, Button, Layout, Menu, Space } from 'antd';
 import './App.css';
 import '../src/style/custom-antd.css';
 import { useEffect, useRef, useState } from 'react';
@@ -10,17 +10,11 @@ const { Header, Content, Footer } = Layout
 
 function App() {
 
-  const [tab, setTab] = useState('0')
-  const scrollRef = useRef(null)
+  const [tab, setTab] = useState('1')
   const [offerResponse, setOfferResponse] = useState()
   const [showOffer, setShowOffer] = useState(!!offerResponse)
   const [showPWReset, setShowPWReset] = useState()
-
   const [width, setWidth] = useState(window.innerWidth);
-
-  const updateDimensions = () => {
-    setWidth(window.innerWidth);
-  }
 
   const heroTitle = "Gemeinsam für die Region.  Die neusten Angebote aus deiner Umgebung.";
   const heroCaption = "Lasst uns nicht nur die Innenstädte, sondern auch die kleineren Regionen wieder zu belebten Orten machen! " +
@@ -28,21 +22,29 @@ function App() {
   const playstoreLink = "https://play.google.com/store/apps/details?id=de.loremio.loremio"
   const appleLink = "https://apps.apple.com/de/app/loremio/id1633791030"
 
+  const navigate = (e) => {
+    console.log(e.key);
+    setTab(e.key)
+  }
+
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  }
+
+  const showInMapClicked = (lat, lng) => {
+    window.open("https://maps.google.com?q=" + lat + "," + lng);
+  };
+
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
-  const executeScroll = () => scrollRef?.current.scrollIntoView({ behavior: "smooth" })
-
-  const navigate = (e) => {
-    setTab(e.key)
-  }
-
   useEffect(() => {
     const offer = window.location.href.indexOf('offer=') !== -1 ? window.location.href.substring(window.location.href.indexOf('offer=') + 6) : -1;
     if (offer !== -1) {
       getPush(offer).then(data => {
+        console.log(data);
         setOfferResponse(data)
         setShowOffer(true)
       })
@@ -58,13 +60,6 @@ function App() {
       setShowPWReset({ email, oobCode })
     }
   }, [])
-
-  useEffect(() => {
-    if (tab !== '0') {
-      executeScroll()
-      setTab('0')
-    }
-  }, [tab])
 
   const HolDieApp = () => {
     return (
@@ -226,6 +221,82 @@ function App() {
     )
   }
 
+  const ShowFeaturesForVendors = () => {
+    return (
+      <div className="content__body__element">
+        <div className="content__body__features">
+          <div className="content__body__features__element1 element">
+            <div className="content__body__features__title title1">Digitalisiere deinen Shop und deine Angebote
+            </div>
+            <div className="content__body__features__detail block1">
+              Finde Händler mit aktuellen Angeboten in deiner Nähe! Nutze dabei die Filteraktion, um die
+              Suche auf deinen Bedarf anzupassen.
+            </div>
+          </div>
+
+          <div className="content__body__features__element2 element">
+            <div className="content__body__features__title title2">Maximiere deine Reichweite</div>
+            <div className="content__body__features__detail block2">
+              Finde heraus wer in deiner Nähe alles an Loremio teilnimmt und nehme an ihren
+              Angebotsaktionen teil.
+            </div>
+          </div>
+
+          <div className="content__body__features__element1 element">
+            <div className="content__body__features__title title1">Mach deine Angebote mithilfe von KI attraktiver</div>
+            <div className="content__body__features__detail block1">
+              Ob dein Friseur, dein Buchladen oder dein Lieblingsrestaurant - Koppel dich mit ihnen und
+              erhalte eine Benachrichtigung sobald sie eine neue Aktion am start haben.
+            </div>
+          </div>
+
+          <div className="content__body__features__element2 element">
+            <div className="content__body__features__title title2">Orientier dich am Markt</div>
+            <div className="content__body__features__detail block2">
+              Du kannst dir zwar bei Loremio ein Konto erstellen, doch zum nutzen der App samt seinen
+              gesamten Funktionalitäten ist dies nicht zwingend nötig.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    )
+  }
+
+  const ShowFeaturesForInvestors = () => {
+    return (
+      <div className="content__body__element">
+        <div className="content__body__features">
+          <div className="content__body__features__element1 element">
+            <div className="content__body__features__title title1">Stärke den regionalen Handel
+            </div>
+            <div className="content__body__features__detail block1">
+              Finde Händler mit aktuellen Angeboten in deiner Nähe! Nutze dabei die Filteraktion, um die
+              Suche auf deinen Bedarf anzupassen.
+            </div>
+          </div>
+
+          <div className="content__body__features__element2 element">
+            <div className="content__body__features__title title2">Belebe die Stadt</div>
+            <div className="content__body__features__detail block2">
+              Finde heraus wer in deiner Nähe alles an Loremio teilnimmt und nehme an ihren
+              Angebotsaktionen teil.
+            </div>
+          </div>
+
+          <div className="content__body__features__element1 element">
+            <div className="content__body__features__title title1">fördere die Digitalisierung deiner Region</div>
+            <div className="content__body__features__detail block1">
+              Ob dein Friseur, dein Buchladen oder dein Lieblingsrestaurant - Koppel dich mit ihnen und
+              erhalte eine Benachrichtigung sobald sie eine neue Aktion am start haben.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    )
+  }
+
   const Offer = ({ offerResponse }) => {
     return (
       <>
@@ -244,7 +315,11 @@ function App() {
                 alt='' />
             </div>
             <div className='offerWrapperContentText'>
-              <div style={{ fontSize: '2rem' }}>{offerResponse?.product?.name}</div>
+              <div style={{ display: 'flex', gap: '1ch', paddingBottom: '1ch', borderBottom: '1px solid lightgrey' }}>
+                <Avatar size="small" src={offerResponse?.vendor?.pictureUrl} />
+                <div style={{ fontSize: '14px' }}>{offerResponse?.vendor?.name}</div>
+              </div>
+              <div style={{ fontSize: '2rem', paddingTop: '1ch' }}>{offerResponse?.product?.name}</div>
               <div>{new Date(offerResponse.createdAt).toLocaleString()}</div>
               <div style={{ marginTop: '25px' }}>
                 {offerResponse?.product?.description}
@@ -252,8 +327,20 @@ function App() {
               <div style={{
                 marginTop: '25px',
                 textAlign: 'end',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                fontSize: '2rem'
               }}>{offerResponse?.price} €
+              </div>
+              <div className='qrCodeDetails' style={{ marginTop: '25px', display: 'flex', alignItems: 'center' }}>
+                <img src={offerResponse?.vendor?.qrCodeUrl} alt='' />
+                <div>
+                  <div style={{ padding: '0 15px' }}>
+                    {offerResponse?.vendor?.name} <br />
+                    {offerResponse?.vendor?.address} <br />
+                    {offerResponse?.vendor?.telephone} <br />
+                  </div>
+                  <Button onClick={() => showInMapClicked(offerResponse?.vendor?.lat, offerResponse?.vendor?.lng)} type="link">Google Maps</Button>
+                </div>
               </div>
             </div>
           </div>
@@ -276,10 +363,9 @@ function App() {
           </div>
 
           {!showPWReset && <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
-            <Menu.Item key='1'>Unternehmen</Menu.Item>
-            <Menu.Item key='2'>Features</Menu.Item>
-            {/**<Menu.Item key='3'>Anleitung</Menu.Item>**/}
-            <Menu.Item key='4'>Hol die App</Menu.Item>
+            <Menu.Item key='1'>Benutzer</Menu.Item>
+            <Menu.Item key='2'>Unternehmer</Menu.Item>
+            <Menu.Item key='3'>Unterstützer</Menu.Item>
           </Menu>}
         </Header>
 
@@ -288,45 +374,58 @@ function App() {
             <Space align='center' direction='vertical' size={width < 1340 ? 180 : 320}>
 
 
-              {!showPWReset &&
+              {!showPWReset && tab === '1' &&
                 <>
-                  <div ref={tab === '1' ? scrollRef : null}>
+                  <div>
                     <ShowÜber />
                   </div>
-                  <div ref={tab === '2' ? scrollRef : null}>
+                  <div>
                     <ShowFeatures />
                   </div>
                   <div>
                     <img style={{ width: '100%' }} src="src3.png" alt="logo" />
                   </div>
-                  <div className="feature-wrap icons">
+                  <div>
+                    <HolDieApp />
+                  </div>
+                </>
+              }
+
+              {!showPWReset && tab === '2' &&
+                <>
+                  <div className="feature-wrap icons" style={{
+                    background: 'linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url(shops.jpeg) no-repeat',
+                    margin: '0px -145px -145px -145px',
+                    color: 'white',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'bottom',
+                    fontWeight: 'bold',
+                    minHeight: '60vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    width: '100vw',
+                  }}>
                     <div className="feature-content icons">
-                      <img
-                        src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c157f771ce3_icon-burger-magenta.svg"
-                        width="80" alt="" className="feature-icon" />
+
                       <h4 className="black-text">Kundenbeziehung</h4>
-                      <p className="paragraph-10">Deine Angebote erreichen innerhalb Sekunden nicht nur
+                      <p className="paragraph">Deine Angebote erreichen innerhalb Sekunden nicht nur
                         deine
                         Stammkundschaft und all jene, die deinem Unternehmen folgen, sie sind auch
                         sichtbar
                         für jeden Loremio-Nutzer im Umkreis von 100km.</p>
                     </div>
                     <div className="feature-content icons">
-                      <img
-                        src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg"
-                        width="74" alt="" className="feature-icon" />
+
                       <h4 className="black-text">Absatz- und Werbekanal</h4>
-                      <p className="paragraph-9">Du erhältst einen exklusiven Werbekanal - die Taschen
+                      <p className="paragraph">Du erhältst einen exklusiven Werbekanal - die Taschen
                         deiner
                         Stammkundschaft! Wir stellen sicher, dass deine Angebote auch wirklich die
                         erreichen, die sie sehen möchten.</p>
                     </div>
                     <div className="feature-content icons">
-                      <img
-                        src="https://uploads-ssl.webflow.com/62153b2220de8c6663771c8e/62153b2220de8c4264771ce4_icon-data-magenta.svg"
-                        alt="" className="feature-icon" />
+
                       <h4 className="black-text">Digitalisierung</h4>
-                      <p className="paragraph-8">Ihnen wird nicht nur für Ihr Unternehmen eine digitale
+                      <p className="paragraph">Ihnen wird nicht nur für Ihr Unternehmen eine digitale
                         Präsenz
                         geboten, sondern auch für Ihre Aktionen und Angebote. Die Informationen sind
                         nicht
@@ -334,9 +433,30 @@ function App() {
                     </div>
                   </div>
 
+                  <div>
+                    <ShowFeaturesForVendors />
+                  </div>
+                </>
+              }
 
-                  <div ref={tab === '4' ? scrollRef : null}>
-                    <HolDieApp />
+              {!showPWReset && tab === '3' &&
+                <>
+                  <div className="feature-wrap icons" style={{
+                    background: 'linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(progress.jpg) no-repeat',
+                    margin: '0px -145px -145px -145px',
+                    color: 'white',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    fontWeight: 'bold',
+                    minHeight: '60vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    width: '100vw',
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', fontSize: '10rem' }}>Warum <div style={{ marginLeft: '1ch', color: '#ffad4e' }}>Loremio</div>?</div>
+                  </div>
+                  <div>
+                    <ShowFeaturesForInvestors />
                   </div>
                 </>
               }
