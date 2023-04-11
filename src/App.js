@@ -226,35 +226,30 @@ function App() {
       <div className="content__body__element">
         <div className="content__body__features">
           <div className="content__body__features__element1 element">
-            <div className="content__body__features__title title1">Digitalisiere deinen Shop und deine Angebote
-            </div>
+            <div className="content__body__features__title title1">Digitalisiere deinen Shop</div>
             <div className="content__body__features__detail block1">
-              Finde Händler mit aktuellen Angeboten in deiner Nähe! Nutze dabei die Filteraktion, um die
-              Suche auf deinen Bedarf anzupassen.
+              Mache dein Geschäft für jeden zugänglich, indem du deinen Shop digitalisierst und dich online repräsentierst.
             </div>
           </div>
 
           <div className="content__body__features__element2 element">
             <div className="content__body__features__title title2">Maximiere deine Reichweite</div>
             <div className="content__body__features__detail block2">
-              Finde heraus wer in deiner Nähe alles an Loremio teilnimmt und nehme an ihren
-              Angebotsaktionen teil.
+              Erreiche mehr Kunden und steigere deine Verkäufe, indem du die Reichweite deiner Angebote maximierst.
             </div>
           </div>
 
           <div className="content__body__features__element1 element">
-            <div className="content__body__features__title title1">Mach deine Angebote mithilfe von KI attraktiver</div>
+            <div className="content__body__features__title title1">Nutze Künstliche Intelligenz</div>
             <div className="content__body__features__detail block1">
-              Ob dein Friseur, dein Buchladen oder dein Lieblingsrestaurant - Koppel dich mit ihnen und
-              erhalte eine Benachrichtigung sobald sie eine neue Aktion am start haben.
+              Nutze die Macht der KI, um deine Angebote optimal zu beschreiben und steigere so deine Verkäufe!
             </div>
           </div>
 
           <div className="content__body__features__element2 element">
-            <div className="content__body__features__title title2">Orientier dich am Markt</div>
+            <div className="content__body__features__title title2">Immer auf dem neuesten Stand</div>
             <div className="content__body__features__detail block2">
-              Du kannst dir zwar bei Loremio ein Konto erstellen, doch zum nutzen der App samt seinen
-              gesamten Funktionalitäten ist dies nicht zwingend nötig.
+              Bleibe auf dem neuesten Stand und orientiere dich an der Konkurrenz und am Markt mit Hilfe unserer App!
             </div>
           </div>
 
@@ -268,27 +263,23 @@ function App() {
       <div className="content__body__element">
         <div className="content__body__features">
           <div className="content__body__features__element1 element">
-            <div className="content__body__features__title title1">Stärke den regionalen Handel
-            </div>
+            <div className="content__body__features__title title1">Stärke den regionalen Handel</div>
             <div className="content__body__features__detail block1">
-              Finde Händler mit aktuellen Angeboten in deiner Nähe! Nutze dabei die Filteraktion, um die
-              Suche auf deinen Bedarf anzupassen.
+              Der regionale Handel bietet viele Vorteile für die Gemeinschaft, indem er Arbeitsplätze schafft, das lokale Wirtschaftswachstum fördert und einzigartige Produkte und Dienstleistungen anbietet, die man in großen Einzelhandelsketten nicht findet. Durch den Kauf bei lokalen Geschäften unterstützen wir also nicht nur die lokale Wirtschaft, sondern auch die Vielfalt und den Charme unserer Gemeinschaft.
             </div>
           </div>
 
           <div className="content__body__features__element2 element">
             <div className="content__body__features__title title2">Belebe die Stadt</div>
             <div className="content__body__features__detail block2">
-              Finde heraus wer in deiner Nähe alles an Loremio teilnimmt und nehme an ihren
-              Angebotsaktionen teil.
+              Eine belebte Stadt ist ein attraktiver Ort zum Leben und Arbeiten. Durch die Unterstützung von lokalen Geschäften und der Förderung des Handels können wir dazu beitragen, dass unsere Stadt eine lebendige und einladende Atmosphäre erhält. Indem wir unsere Einkäufe lokal tätigen und kleine Unternehmen unterstützen, können wir auch sicherstellen, dass unsere Stadt einzigartig und unverwechselbar bleibt.
             </div>
           </div>
 
           <div className="content__body__features__element1 element">
             <div className="content__body__features__title title1">fördere die Digitalisierung deiner Region</div>
             <div className="content__body__features__detail block1">
-              Ob dein Friseur, dein Buchladen oder dein Lieblingsrestaurant - Koppel dich mit ihnen und
-              erhalte eine Benachrichtigung sobald sie eine neue Aktion am start haben.
+              Die Digitalisierung bietet eine Vielzahl von Möglichkeiten für die Region, von der Schaffung von Arbeitsplätzen bis hin zur Verbesserung der Effizienz von Unternehmen. Indem wir die Digitalisierung fördern und lokale Unternehmen dabei unterstützen, ihre Online-Präsenz zu verbessern, können wir ihnen helfen, in einer immer stärker vernetzten Welt wettbewerbsfähig zu bleiben. Durch die Nutzung von Online-Marktplätzen können wir auch die Sichtbarkeit unserer lokalen Unternehmen erhöhen und so dazu beitragen, dass sie erfolgreich sind.
             </div>
           </div>
 
@@ -395,7 +386,6 @@ function App() {
                 <>
                   <div className="feature-wrap icons" style={{
                     background: 'linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url(shops.jpeg) no-repeat',
-                    margin: '0px -145px -145px -145px',
                     color: 'white',
                     backgroundSize: 'cover',
                     backgroundPosition: 'bottom',
@@ -443,7 +433,6 @@ function App() {
                 <>
                   <div className="feature-wrap icons" style={{
                     background: 'linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(progress.jpg) no-repeat',
-                    margin: '0px -145px -145px -145px',
                     color: 'white',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -453,7 +442,7 @@ function App() {
                     alignItems: 'center',
                     width: '100vw',
                   }}>
-                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%', fontSize: '10rem' }}>Warum <div style={{ marginLeft: '1ch', color: '#ffad4e' }}>Loremio</div>?</div>
+                    <div className="subHeader">Warum <div style={{ color: '#ffad4e' }}>Loremio</div>?</div>
                   </div>
                   <div>
                     <ShowFeaturesForInvestors />

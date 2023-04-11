@@ -33,6 +33,14 @@
   padding: 10ch 10%;
 }
 
+.subHeader {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 128px;
+  gap: 1ch;
+}
+
 .offerWrapperContent {
   height: 100%;
   display: flex;
@@ -171,6 +179,7 @@
 
 .feature-wrap.icons {
   display: flex;
+  margin: 0px -145px -145px -145px
 }
 
 .black-text {
@@ -251,6 +260,15 @@
 
   .feature-wrap.icons {
     flex-direction: column;
+    margin: -10px 0px 0px -20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
   }
 
   .content__body__bomber {
