@@ -409,8 +409,8 @@ function App() {
                       <h4 className="black-text">Absatz- und Werbekanal</h4>
                       <p className="paragraph">Du erhältst einen exklusiven Werbekanal - die Taschen
                         deiner
-                        Stammkundschaft! Wir stellen sicher, dass deine Angebote auch wirklich die
-                        erreichen, die sie sehen möchten.</p>
+                        Stammkundschaft! Nutze ki um deine Produkte kostenlos zu beschreiben und wir stellen sicher, dass deine Angebote auch wirklich die
+                        Kunden erreichen, die sie sehen möchten.</p>
                     </div>
                     <div className="feature-content icons">
 
