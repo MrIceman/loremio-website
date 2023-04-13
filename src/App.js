@@ -385,7 +385,7 @@ function App() {
               {!showPWReset && tab === '2' &&
                 <>
                   <div className="feature-wrap icons" style={{
-                    background: 'linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url(shops.jpeg) no-repeat',
+                    background: 'linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(shops.jpeg) no-repeat',
                     color: 'white',
                     backgroundSize: 'cover',
                     backgroundPosition: 'bottom',
