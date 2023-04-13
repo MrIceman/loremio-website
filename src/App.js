@@ -201,7 +201,7 @@ function App() {
           </div>
 
           <div className="content__body__features__element1 element">
-            <div className="content__body__features__title title1">Registrier dein Unternehmen bei Loremio
+            <div className="content__body__features__title title1">Registriere dein Unternehmen bei Loremio
             </div>
             <div className="content__body__features__detail block1">
               Mit nur wenigen Schritten kannst du dein Unternehmen in der Loremio-Plattform
@@ -210,12 +210,12 @@ function App() {
             </div>
           </div>
 
-          <div className="content__body__features__element4">
+          {/**<div className="content__body__features__element4">
             <font style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> Nutzer | <font
               style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> Händler | <font
                 style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> neue Angebote pro Minute | <font
                   style={{ color: '#ffad4e', fontWeight: 'bold' }}>-</font> erstellte Angebote
-          </div>
+    </div>**/}
         </div>
       </div>
     )
