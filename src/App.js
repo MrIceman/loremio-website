@@ -10,7 +10,7 @@ const {Header, Content, Footer} = Layout
 
 function App() {
 
-    const [tab, setTab] = useState('1')
+    const [tab, setTab] = useState('-1')
     const [offerResponse, setOfferResponse] = useState()
     const [showOffer, setShowOffer] = useState(!!offerResponse)
     const [showPWReset, setShowPWReset] = useState()
@@ -47,6 +47,13 @@ function App() {
     }, []);
 
     useEffect(() => {
+        if (window.location.href.indexOf('/unternehmer') !== -1) {
+            setTab('2');
+            navigate({key: '2'});
+        } else {
+            setTab('1')
+            navigate({key: '1'})
+        }
         const offer = window.location.href.indexOf('offer=') !== -1 ? window.location.href.substring(window.location.href.indexOf('offer=') + 6) : -1;
         if (offer !== -1) {
             getPush(offer).then(data => {
@@ -287,7 +294,7 @@ function App() {
         return (
             <div className="content__body__element">
                 <div className="content__body__features">
-                    <div className="content__body__features__element1 element">
+                    <div className="content__body__features__element1 element" style={{color: vendorTitleColor}}>
                         <div className="content__body__features__title title1">Digitalisiere deinen Shop</div>
                         <div className="content__body__features__detail block1">
                             Mache dein Geschäft für jeden zugänglich, indem du deinen Shop digitalisierst und dich
@@ -295,7 +302,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="content__body__features__element2 element">
+                    <div className="content__body__features__element2 element" style={{color: vendorTitleColor}}>
                         <div className="content__body__features__title title2">Maximiere deine Reichweite</div>
                         <div className="content__body__features__detail block2">
                             Erreiche mehr Kunden und steigere deine Verkäufe, indem du die Reichweite deiner Angebote
@@ -303,7 +310,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="content__body__features__element1 element">
+                    <div className="content__body__features__element1 element" style={{color: vendorTitleColor}}>
                         <div className="content__body__features__title title1">Nutze Künstliche Intelligenz</div>
                         <div className="content__body__features__detail block1">
                             Nutze die Macht der KI, um deine Angebote optimal zu beschreiben und steigere so deine
@@ -311,7 +318,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="content__body__features__element2 element">
+                    <div className="content__body__features__element2 element" style={{color: vendorTitleColor}}>
                         <div className="content__body__features__title title2">Immer auf dem neuesten Stand</div>
                         <div className="content__body__features__detail block2">
                             Bleibe auf dem neuesten Stand und orientiere dich an der Konkurrenz und am Markt mit Hilfe
@@ -443,7 +450,7 @@ function App() {
                     </div>
 
                     {!showPWReset &&
-                        <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']} onClick={navigate}>
+                        <Menu theme="light" mode="horizontal" defaultSelectedKeys={[tab]} onClick={navigate}>
                             <Menu.Item key='1'>Benutzer</Menu.Item>
                             <Menu.Item key='2'>Unternehmer</Menu.Item>
                             <Menu.Item key='3'>Unterstützer</Menu.Item>
@@ -552,7 +559,8 @@ function App() {
                                                 width: '100vw',
                                             }}>
                                                 <div className="feature-content icons">
-                                                    <h4 className="black-text" style={{color: vendorTitleColor}}>Kundenbeziehung</h4>
+                                                    <h4 className="black-text"
+                                                        style={{color: vendorTitleColor}}>Kundenbeziehung</h4>
                                                     <p className="paragraph">Deine Angebote erreichen innerhalb Sekunden
                                                         nicht
                                                         nur
@@ -565,7 +573,8 @@ function App() {
                                                 </div>
                                                 <div className="feature-content icons">
 
-                                                    <h4 className="black-text" style={{color: vendorTitleColor}}>Absatz- und Werbekanal</h4>
+                                                    <h4 className="black-text" style={{color: vendorTitleColor}}>Absatz-
+                                                        und Werbekanal</h4>
                                                     <p className="paragraph">Du erhältst einen exklusiven Werbekanal -
                                                         die
                                                         Taschen
@@ -577,7 +586,8 @@ function App() {
                                                 </div>
                                                 <div className="feature-content icons">
 
-                                                    <h4 className="black-text" style={{color: vendorTitleColor}}>Digitalisierung</h4>
+                                                    <h4 className="black-text"
+                                                        style={{color: vendorTitleColor}}>Digitalisierung</h4>
                                                     <p className="paragraph">Ihnen wird nicht nur für Ihr Unternehmen
                                                         eine
                                                         digitale
