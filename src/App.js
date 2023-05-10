@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react';
 import {getPush} from './data/vendor';
 import PWReset from './PWReset';
 import logo from './assets/loremio.png';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
 
 const {Header, Content, Footer} = Layout
 
