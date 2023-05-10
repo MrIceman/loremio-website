@@ -5,6 +5,7 @@ import {useEffect, useState} from 'react';
 import {getPush} from './data/vendor';
 import PWReset from './PWReset';
 import logo from './assets/loremio.png';
+import ReactPlayer from 'react-player';
 
 const {Header, Content, Footer} = Layout
 
@@ -336,38 +337,38 @@ function App() {
             <div className="content__body__element">
                 <div className="content__body__features">
                     <div className="content__body__features__element1 element">
-                        <div className="content__body__features__title title1">Stärke den regionalen Handel</div>
+                        <div className="content__body__features__title title1">Stärken Sie den regionalen Handel</div>
                         <div className="content__body__features__detail block1">
-                            Der regionale Handel bietet viele Vorteile für die Gemeinschaft, indem er Arbeitsplätze
-                            schafft, das lokale Wirtschaftswachstum fördert und einzigartige Produkte und
-                            Dienstleistungen anbietet, die man in großen Einzelhandelsketten nicht findet. Durch den
-                            Kauf bei lokalen Geschäften unterstützen wir also nicht nur die lokale Wirtschaft, sondern
-                            auch die Vielfalt und den Charme unserer Gemeinschaft.
+                            Der regionale Handel ist ein wichtiger Bestandteil unserer Gemeinschaft. Durch die Stärkung
+                            des regionalen Handels können wir dazu beitragen, dass unsere Gemeinschaft gestärkt wird und
+                            unsere lokale Wirtschaft gedeiht. Indem wir unsere Einkäufe lokal tätigen und kleine
+                            Unternehmen unterstützen, können wir dazu beitragen, dass unsere Gemeinschaft lebendig und
+                            wettbewerbsfähig bleibt.
                         </div>
                     </div>
 
                     <div className="content__body__features__element2 element">
-                        <div className="content__body__features__title title2">Belebe die Stadt</div>
+                        <div className="content__body__features__title title2">Beleben wir die Städte</div>
                         <div className="content__body__features__detail block2">
-                            Eine belebte Stadt ist ein attraktiver Ort zum Leben und Arbeiten. Durch die Unterstützung
-                            von lokalen Geschäften und der Förderung des Handels können wir dazu beitragen, dass unsere
-                            Stadt eine lebendige und einladende Atmosphäre erhält. Indem wir unsere Einkäufe lokal
-                            tätigen und kleine Unternehmen unterstützen, können wir auch sicherstellen, dass unsere
-                            Stadt einzigartig und unverwechselbar bleibt.
+                            "Beleben wir die Städte" - dieser Titel fordert uns dazu auf, gemeinsam unsere Städte wieder
+                            zum Leben zu erwecken. Wir als Einwohner können durch unsere aktive Beteiligung und
+                            Unterstützung lokaler Aktivitäten dazu beitragen, dass unsere Städte einladend und lebendig
+                            sind. Eine lebendige Stadt schafft nicht nur ein angenehmes Umfeld zum Leben und Arbeiten,
+                            sondern fördert auch das Miteinander und stärkt das Gemeinschaftsgefühl. Zusammen können wir
+                            unsere Städte zu einem Ort machen, den wir gerne unser Zuhause nennen.
                         </div>
                     </div>
 
                     <div className="content__body__features__element1 element">
-                        <div className="content__body__features__title title1">fördere die Digitalisierung deiner
+                        <div className="content__body__features__title title1">Förderen Sie die Digitalisierung Ihrer
                             Region
                         </div>
                         <div className="content__body__features__detail block1">
-                            Die Digitalisierung bietet eine Vielzahl von Möglichkeiten für die Region, von der Schaffung
-                            von Arbeitsplätzen bis hin zur Verbesserung der Effizienz von Unternehmen. Indem wir die
-                            Digitalisierung fördern und lokale Unternehmen dabei unterstützen, ihre Online-Präsenz zu
-                            verbessern, können wir ihnen helfen, in einer immer stärker vernetzten Welt wettbewerbsfähig
-                            zu bleiben. Durch die Nutzung von Online-Marktplätzen können wir auch die Sichtbarkeit
-                            unserer lokalen Unternehmen erhöhen und so dazu beitragen, dass sie erfolgreich sind.
+                            Als Unterstützer können Sie die Digitalisierung Ihrer Region fördern und damit einen
+                            wichtigen Beitrag zur Stärkung der Wettbewerbsfähigkeit der lokalen Unternehmen leisten.
+                            Ihre Hilfe ermöglicht es uns, unsere Region zukunftsorientiert zu gestalten und den
+                            Anforderungen des digitalen Zeitalters gerecht zu werden. Werden Sie Teil dieser Entwicklung
+                            und unterstützen Sie die Digitalisierung Ihrer Region.
                         </div>
                     </div>
 
@@ -440,7 +441,7 @@ function App() {
         <>
 
             {offerResponse && showOffer &&
-                <Offer offerResponse={offerResponse}/>
+            <Offer offerResponse={offerResponse}/>
             }
 
             <Layout className="layout">
@@ -450,185 +451,181 @@ function App() {
                     </div>
 
                     {!showPWReset &&
-                        <Menu theme="light" mode="horizontal" defaultSelectedKeys={[tab]} onClick={navigate}>
-                            <Menu.Item key='1'>Benutzer</Menu.Item>
-                            <Menu.Item key='2'>Unternehmer</Menu.Item>
-                            <Menu.Item key='3'>Unterstützer</Menu.Item>
-                        </Menu>}
+                    <Menu theme="light" mode="horizontal" defaultSelectedKeys={[tab]} onClick={navigate}>
+                        <Menu.Item key='1'>Benutzer</Menu.Item>
+                        <Menu.Item key='2'>Unternehmer</Menu.Item>
+                        <Menu.Item key='3'>Unterstützer</Menu.Item>
+                    </Menu>}
                 </Header>
 
                 <Content>
                     <div className="content__body" style={{backgroundColor: tab === "2" ? vendorBgColor : "#fff"}}>
                         <Space direction='vertical' size={width < 1340 ? 180 : 320}>
                             {!showPWReset && tab === '1' &&
-                                <>
-                                    <div>
-                                        <UserHeader/>
-                                    </div>
-                                    <div>
-                                        <ShowFeatures/>
-                                    </div>
-                                    <div>
-                                        <img style={{width: '100%'}} src="src3.png" alt="logo"/>
-                                    </div>
-                                    <div>
-                                        <HolDieApp/>
-                                    </div>
-                                </>
+                            <>
+                                {/*<div>*/}
+                                {/*    <ReactPlayer*/}
+                                {/*        url={"https://player.odycdn.com/api/v4/streams/free/ohne-beine/6beccb1b2f4ebfcaf0b9aedf74dd4c5759a5864c/e60e1e"}*/}
+                                {/*        playing={true}*/}
+                                {/*        loop={true}*/}
+                                {/*        width={200} height={200}*/}
+                                {/*    />*/}
+                                {/*</div>*/}
+                                <div>
+                                    <UserHeader/>
+                                </div>
+                                <div>
+                                    <ShowFeatures/>
+                                </div>
+                                <div>
+                                    <img style={{width: '100%'}} src="src3.png" alt="logo"/>
+                                </div>
+                                <div>
+                                    <HolDieApp/>
+                                </div>
+                            </>
                             }
 
                             {!showPWReset && tab === '2' &&
-                                <>
-                                    <VendorHeader/>
-                                    <div className="content__body__element feature-wrap icons" style={{
-                                        backgroundColor: "#fff",
-                                        color: 'white',
-                                        backgroundSize: 'cover',
-                                        fontWeight: 'bold',
-                                        display: 'flex',
-                                        flexDirection: "column",
-                                        justifyContent: 'stretch',
-                                        width: '100vw',
-                                    }}>
-                                        <div className="feature-content icons" style={{
-                                            background: '#FFF',
-                                            flexDirection: 'column',
-                                            fontWeight: 'bold',
-                                            minHeight: '60vh',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            paddingLeft: 13,
-                                            paddingRight: 13,
-                                            paddingTop: 100,
-                                            width: '100wv',
-                                        }}>
-                                            <center>
-                                                <font
-                                                    style={{
-                                                        fontWeight: 'bold',
-                                                        color: vendorTitleColor,
-                                                        fontSize: "62px"
-                                                    }}>
-                                                    Verwirklichen Sie Ihre Geschäftsträume mit uns</font>
-                                            </center>
-                                            <font color={vendorTitleColor}>
-                                                <p className="paragraph">Als Unternehmer sind Sie stolz auf Ihr Geschäft
-                                                    und
-                                                    arbeiten hart daran, es erfolgreich zu machen. Aber es kann eine
-                                                    Herausforderung sein, Ihre Sichtbarkeit zu erhöhen und neue Kunden
-                                                    zu
-                                                    gewinnen. Das ist, wo die Loremio-App ins Spiel kommt - wir helfen
-                                                    Ihnen, Ihr Geschäft zu fördern und Ihre Träume zu verwirklichen!
-                                                    <br/><br/>
-                                                    Mit unserer App können Sie ganz einfach Angebote erstellen und wir
-                                                    zeigen sie unseren Nutzern in Ihrer Umgebung an. Sie können sich
-                                                    darauf
-                                                    verlassen, dass Ihre Werbetexte immer professionell und angepasst
-                                                    sind,
-                                                    dank unserer neuesten KI-Technologie. Und das Beste ist, dass wir
-                                                    sicherstellen, dass Ihre treue Stammkundschaft immer auf dem
-                                                    Laufenden
-                                                    bleibt, indem wir sie über Ihre neuen Angebote und Aktionen per
-                                                    Push-Nachricht informieren.
-                                                    <br/><br/>
-                                                    Wir wissen, dass jeder Kleinunternehmer einzigartig ist und wir
-                                                    möchten
-                                                    Ihnen helfen, Ihre Individualität hervorzuheben und Ihre Träume zu
-                                                    verwirklichen. Melden Sie sich noch heute bei uns an und entdecken
-                                                    Sie,
-                                                    wie wir Ihnen helfen können, Ihre Reichweite zu vergrößern und Ihre
-                                                    Kundenbindung zu verbessern.
-                                                </p></font>
-                                            <center>
-                                                <font
-                                                    style={{
-                                                        fontWeight: 'bold',
-                                                        color: vendorTitleColor,
-                                                        fontSize: "62px"
-                                                    }}>Ihre Vorteile</font>
-                                            </center>
-                                            <div className="feature-wrap icons" style={{
-                                                color: vendorTitleColor,
-                                                backgroundSize: 'cover',
-                                                backgroundPosition: 'bottom',
-                                                fontWeight: 'bold',
-                                                minHeight: '60vh',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                width: '100vw',
-                                            }}>
-                                                <div className="feature-content icons">
-                                                    <h4 className="black-text"
-                                                        style={{color: vendorTitleColor}}>Kundenbeziehung</h4>
-                                                    <p className="paragraph">Deine Angebote erreichen innerhalb Sekunden
-                                                        nicht
-                                                        nur
-                                                        deine
-                                                        Stammkundschaft und all jene, die deinem Unternehmen folgen, sie
-                                                        sind
-                                                        auch
-                                                        sichtbar
-                                                        für jeden Loremio-Nutzer im Umkreis von 100km.</p>
-                                                </div>
-                                                <div className="feature-content icons">
-
-                                                    <h4 className="black-text" style={{color: vendorTitleColor}}>Absatz-
-                                                        und Werbekanal</h4>
-                                                    <p className="paragraph">Du erhältst einen exklusiven Werbekanal -
-                                                        die
-                                                        Taschen
-                                                        deiner
-                                                        Stammkundschaft! Nutze ki um deine Produkte kostenlos zu
-                                                        beschreiben und
-                                                        wir stellen sicher, dass deine Angebote auch wirklich die
-                                                        Kunden erreichen, die sie sehen möchten.</p>
-                                                </div>
-                                                <div className="feature-content icons">
-
-                                                    <h4 className="black-text"
-                                                        style={{color: vendorTitleColor}}>Digitalisierung</h4>
-                                                    <p className="paragraph">Ihnen wird nicht nur für Ihr Unternehmen
-                                                        eine
-                                                        digitale
-                                                        Präsenz
-                                                        geboten, sondern auch für Ihre Aktionen und Angebote. Die
-                                                        Informationen
-                                                        sind
-                                                        nicht
-                                                        nur über die mobile Applikation aufrufbar, sondern auch übers
-                                                        Web.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <ShowFeaturesForVendors/>
-                                    </div>
-                                </>
-                            }
-
-                            {!showPWReset && tab === '3' &&
-                                <>
-                                    <div className="feature-wrap icons" style={{
-                                        background: 'linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(progress.jpg) no-repeat',
-                                        color: 'white',
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
+                            <>
+                                <VendorHeader/>
+                                <div className="content__body__element feature-wrap icons" style={{
+                                    backgroundColor: "#fff",
+                                    color: 'white',
+                                    backgroundSize: 'cover',
+                                    fontWeight: 'bold',
+                                    display: 'flex',
+                                    flexDirection: "column",
+                                    justifyContent: 'stretch',
+                                    width: '100vw',
+                                }}>
+                                    <div className="feature-content icons" style={{
+                                        background: '#FFF',
+                                        flexDirection: 'column',
                                         fontWeight: 'bold',
                                         minHeight: '60vh',
                                         display: 'flex',
                                         alignItems: 'center',
-                                        width: '100vw',
+                                        justifyContent: 'center',
+                                        paddingLeft: 13,
+                                        paddingRight: 13,
+                                        paddingTop: 100,
+                                        width: '100wv',
                                     }}>
-                                        <div className="subHeader">Warum <div style={{color: '#ffad4e'}}>Loremio</div>?
+                                        <center>
+
+                                            <font
+                                                style={{
+                                                    fontWeight: 'bold',
+                                                    color: vendorTitleColor,
+                                                    fontSize: "62px"
+                                                }}>
+                                                Vorteile für dein Geschäft</font>
+                                        </center>
+                                        <font color={vendorTitleColor}>
+                                            <p className="paragraph">Als Unternehmer bist du stolz auf dein Geschäft und
+                                                arbeitest hart daran, es erfolgreich zu machen. Aber es kann eine
+                                                Herausforderung sein, deine Sichtbarkeit zu erhöhen und neue Kunden zu
+                                                gewinnen. Das ist, wo die Loremio-App ins Spiel kommt - wir helfen dir,
+                                                dein Geschäft zu fördern und deine Träume zu verwirklichen!
+                                                <br/><br/>
+                                                Mit unserer App kannst du ganz einfach Angebote erstellen und wir zeigen
+                                                sie unseren Nutzern in deiner Umgebung an. Du kannst dich darauf
+                                                verlassen, dass deine Werbetexte immer professionell und angepasst sind,
+                                                dank unserer neuesten KI-Technologie. Und das Beste ist, dass wir
+                                                sicherstellen, dass deine treue Stammkundschaft immer auf dem Laufenden
+                                                bleibt, indem wir sie über deine neuen Angebote und Aktionen per
+                                                Push-Nachricht informieren.
+                                                <br/><br/>
+                                                Wir wissen, dass jeder Kleinunternehmer einzigartig ist und wir möchten
+                                                dir helfen, deine Individualität hervorzuheben und deine Träume zu
+                                                verwirklichen. Melde dich noch heute bei uns an und entdecke, wie wir
+                                                dir helfen können, deine Reichweite zu vergrößern und deine
+                                                Kundenbindung zu verbessern.
+                                            </p></font>
+                                        <center>
+                                            <font
+                                                style={{
+                                                    fontWeight: 'bold',
+                                                    color: vendorTitleColor,
+                                                    fontSize: "62px"
+                                                }}>Ihre Vorteile</font>
+                                        </center>
+                                        <div className="feature-wrap icons" style={{
+                                            color: vendorTitleColor,
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'bottom',
+                                            fontWeight: 'bold',
+                                            minHeight: '60vh',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            width: '100vw',
+                                        }}>
+                                            <div className="feature-content icons">
+                                                <h4 className="black-text"
+                                                    style={{color: vendorTitleColor}}>Kundenbeziehung</h4>
+                                                <p className="paragraph">Deine Angebote erreichen innerhalb Sekunden
+                                                    nicht
+                                                    nur
+                                                    deine
+                                                    Stammkundschaft und all jene, die deinem Unternehmen folgen, sie
+                                                    sind
+                                                    auch
+                                                    sichtbar
+                                                    für jeden Loremio-Nutzer im Umkreis von 100km.</p>
+                                            </div>
+                                            <div className="feature-content icons">
+
+                                                <h4 className="black-text" style={{color: vendorTitleColor}}>Absatz-
+                                                    und Werbekanal</h4>
+                                                <p className="paragraph">Du erhältst einen exklusiven Werbekanal -
+                                                    die
+                                                    Taschen
+                                                    deiner
+                                                    Stammkundschaft! Nutze ki um deine Produkte kostenlos zu
+                                                    beschreiben und
+                                                    wir stellen sicher, dass deine Angebote auch wirklich die
+                                                    Kunden erreichen, die sie sehen möchten.</p>
+                                            </div>
+                                            <div className="feature-content icons">
+
+                                                <h4 className="black-text"
+                                                    style={{color: vendorTitleColor}}>Digitalisierung</h4>
+                                                <p className="paragraph">Dir wird nicht nur für dein Unternehmen eine
+                                                    digitale Präsenz geboten, sondern auch für deine Aktionen und
+                                                    Angebote. Die Informationen sind nicht nur über die mobile
+                                                    Applikation aufrufbar, sondern auch übers Web.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <ShowFeaturesForInvestors/>
+                                </div>
+
+                                <div>
+                                    <ShowFeaturesForVendors/>
+                                </div>
+                            </>
+                            }
+
+                            {!showPWReset && tab === '3' &&
+                            <>
+                                <div className="feature-wrap icons" style={{
+                                    background: 'linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(progress.jpg) no-repeat',
+                                    color: 'white',
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    fontWeight: 'bold',
+                                    minHeight: '60vh',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    width: '100vw',
+                                }}>
+                                    <div className="subHeader">Warum <div style={{color: '#ffad4e'}}>Loremio</div>?
                                     </div>
-                                </>
+                                </div>
+                                <div>
+                                    <ShowFeaturesForInvestors/>
+                                </div>
+                            </>
                             }
 
 
