@@ -24,8 +24,8 @@ function App() {
     const appleLink = "https://apps.apple.com/de/app/loremio/id1633791030"
 
     // vendor values
-    const vendorHeroTitle = "Vermarkten Sie Ihr Geschäft effektiv mit unserer innovativen Plattform."
-    const vendorHeroShortDescription = "Verwirklichen Sie Ihre Geschäftsträume mit der Loremio-App. Erstellen Sie Angebote und erreichen Sie neue Kunden in Ihrer Umgebung. Nutzen Sie unsere neueste KI-Technologie für professionelle Werbetexte und halten Sie Ihre Stammkundschaft auf dem Laufenden"
+    const vendorHeroTitle = "Vermarkte dein Geschäft effektiv mit unserer innovativen Plattform."
+    const vendorHeroShortDescription = "Verwirkliche deine Geschäftsträume mit der Loremio-App. Erstelle Angebote und erreiche neue Kunden in deiner Umgebung. Nutze unsere neueste KI-Technologie für professionelle Werbetexte und halte deine Stammkundschaft auf dem Laufenden."
     const vendorBgColor = "#ffad4e"
     const vendorTitleColor = '#333333'
 
@@ -69,6 +69,8 @@ function App() {
                 window.location.href.indexOf("/auth/reset/") + 15,
                 window.location.href.lastIndexOf("/?mode=resetPassword&oobCode=")
             ) : -1;
+        console.log("email");
+        console.log(email);
         const oobCode = window.location.href.substring(window.location.href.indexOf("oobCode=") + 8)
         if (email !== -1) {
             setShowPWReset({email, oobCode})
@@ -275,7 +277,7 @@ function App() {
                         </div>
                         <div className="content__body__features__detail block1">
                             Mit nur wenigen Schritten kannst du dein Unternehmen in der Loremio-Plattform
-                            anmelden und direkt damit loslegen, einen Draht zu deiner Kundschaft aufbauen und Angebote
+                            anmelden und direkt damit loslegen, einen Draht zu deiner Kundschaft aufzubauen und Angebote
                             in der Umgebung zu werben (bis zu 100 KM).
                         </div>
                     </div>
@@ -437,6 +439,121 @@ function App() {
         )
     }
 
+    function ShowExtraFeaturesForVendor() {
+        return <div className="content__body__element feature-wrap icons" style={{
+            backgroundColor: "#fff",
+            color: 'white',
+            backgroundSize: 'cover',
+            fontWeight: 'bold',
+            display: 'flex',
+            flexDirection: "column",
+            justifyContent: 'stretch',
+            width: '100vw',
+        }}>
+            <div className="feature-content icons" style={{
+                background: '#FFF',
+                flexDirection: 'column',
+                fontWeight: 'bold',
+                minHeight: '60vh',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                paddingLeft: 13,
+                paddingRight: 13,
+                paddingTop: 100,
+                width: '100wv',
+            }}>
+                <div className="content__body__features__title title1">Stärken Sie den regionalen Handel</div>
+                <center>
+
+                    <font
+                        style={{
+                            fontWeight: 'bold',
+                            color: vendorTitleColor,
+                            fontSize: "62px"
+                        }}>
+                        Vorteile für dein Geschäft</font>
+                </center>
+                <div className="content__body__features__title title1">Vorteile für dein Geschäft</div>
+                <font color={vendorTitleColor}>
+                    <p className="paragraph">Als Unternehmer bist du stolz auf dein Geschäft und
+                        arbeitest hart daran, es erfolgreich zu machen. Aber es kann eine
+                        Herausforderung sein, deine Sichtbarkeit zu erhöhen und neue Kunden zu
+                        gewinnen. Das ist, wo die Loremio-App ins Spiel kommt - wir helfen dir,
+                        dein Geschäft zu fördern und deine Träume zu verwirklichen!
+                        <br/><br/>
+                        Mit unserer App kannst du ganz einfach Angebote erstellen und wir zeigen
+                        sie unseren Nutzern in deiner Umgebung an. Du kannst dich darauf
+                        verlassen, dass deine Werbetexte immer professionell und angepasst sind,
+                        dank unserer neuesten KI-Technologie. Und das Beste ist, dass wir
+                        sicherstellen, dass deine treue Stammkundschaft immer auf dem Laufenden
+                        bleibt, indem wir sie über deine neuen Angebote und Aktionen per
+                        Push-Nachricht informieren.
+                        <br/><br/>
+                        Wir wissen, dass jeder Kleinunternehmer einzigartig ist und wir möchten
+                        dir helfen, deine Individualität hervorzuheben und deine Träume zu
+                        verwirklichen. Melde dich noch heute bei uns an und entdecke, wie wir
+                        dir helfen können, deine Reichweite zu vergrößern und deine
+                        Kundenbindung zu verbessern.
+                    </p></font>
+                <center>
+                    <font
+                        style={{
+                            fontWeight: 'bold',
+                            color: vendorTitleColor,
+                            fontSize: "62px"
+                        }}>Ihre Vorteile</font>
+                </center>
+                <div className="feature-wrap icons" style={{
+                    color: vendorTitleColor,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'bottom',
+                    fontWeight: 'bold',
+                    minHeight: '60vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    width: '100vw',
+                }}>
+                    <div className="feature-content icons">
+                        <h4 className="black-text"
+                            style={{color: vendorTitleColor}}>Kundenbeziehung</h4>
+                        <p className="paragraph">Deine Angebote erreichen innerhalb Sekunden
+                            nicht
+                            nur
+                            deine
+                            Stammkundschaft und all jene, die deinem Unternehmen folgen, sie
+                            sind
+                            auch
+                            sichtbar
+                            für jeden Loremio-Nutzer im Umkreis von 100km.</p>
+                    </div>
+                    <div className="feature-content icons">
+
+                        <h4 className="black-text" style={{color: vendorTitleColor}}>Absatz-
+                            und Werbekanal</h4>
+                        <p className="paragraph">Du erhältst einen exklusiven Werbekanal -
+                            die
+                            Taschen
+                            deiner
+                            Stammkundschaft! Nutze ki um deine Produkte kostenlos zu
+                            beschreiben und
+                            wir stellen sicher, dass deine Angebote auch wirklich die
+                            Kunden erreichen, die sie sehen möchten.</p>
+                    </div>
+                    <div className="feature-content icons">
+
+                        <h4 className="black-text"
+                            style={{color: vendorTitleColor}}>Digitalisierung</h4>
+                        <p className="paragraph">Dir wird nicht nur für dein Unternehmen eine
+                            digitale Präsenz geboten, sondern auch für deine Aktionen und
+                            Angebote. Die Informationen sind nicht nur über die mobile
+                            Applikation aufrufbar, sondern auch übers Web.</p>
+                    </div>
+                </div>
+            </div>
+        </div>;
+    }
+
     return (
         <>
 
@@ -488,117 +605,10 @@ function App() {
 
                             {!showPWReset && tab === '2' &&
                             <>
-                                <VendorHeader/>
-                                <div className="content__body__element feature-wrap icons" style={{
-                                    backgroundColor: "#fff",
-                                    color: 'white',
-                                    backgroundSize: 'cover',
-                                    fontWeight: 'bold',
-                                    display: 'flex',
-                                    flexDirection: "column",
-                                    justifyContent: 'stretch',
-                                    width: '100vw',
-                                }}>
-                                    <div className="feature-content icons" style={{
-                                        background: '#FFF',
-                                        flexDirection: 'column',
-                                        fontWeight: 'bold',
-                                        minHeight: '60vh',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        paddingLeft: 13,
-                                        paddingRight: 13,
-                                        paddingTop: 100,
-                                        width: '100wv',
-                                    }}>
-                                        <center>
-
-                                            <font
-                                                style={{
-                                                    fontWeight: 'bold',
-                                                    color: vendorTitleColor,
-                                                    fontSize: "62px"
-                                                }}>
-                                                Vorteile für dein Geschäft</font>
-                                        </center>
-                                        <font color={vendorTitleColor}>
-                                            <p className="paragraph">Als Unternehmer bist du stolz auf dein Geschäft und
-                                                arbeitest hart daran, es erfolgreich zu machen. Aber es kann eine
-                                                Herausforderung sein, deine Sichtbarkeit zu erhöhen und neue Kunden zu
-                                                gewinnen. Das ist, wo die Loremio-App ins Spiel kommt - wir helfen dir,
-                                                dein Geschäft zu fördern und deine Träume zu verwirklichen!
-                                                <br/><br/>
-                                                Mit unserer App kannst du ganz einfach Angebote erstellen und wir zeigen
-                                                sie unseren Nutzern in deiner Umgebung an. Du kannst dich darauf
-                                                verlassen, dass deine Werbetexte immer professionell und angepasst sind,
-                                                dank unserer neuesten KI-Technologie. Und das Beste ist, dass wir
-                                                sicherstellen, dass deine treue Stammkundschaft immer auf dem Laufenden
-                                                bleibt, indem wir sie über deine neuen Angebote und Aktionen per
-                                                Push-Nachricht informieren.
-                                                <br/><br/>
-                                                Wir wissen, dass jeder Kleinunternehmer einzigartig ist und wir möchten
-                                                dir helfen, deine Individualität hervorzuheben und deine Träume zu
-                                                verwirklichen. Melde dich noch heute bei uns an und entdecke, wie wir
-                                                dir helfen können, deine Reichweite zu vergrößern und deine
-                                                Kundenbindung zu verbessern.
-                                            </p></font>
-                                        <center>
-                                            <font
-                                                style={{
-                                                    fontWeight: 'bold',
-                                                    color: vendorTitleColor,
-                                                    fontSize: "62px"
-                                                }}>Ihre Vorteile</font>
-                                        </center>
-                                        <div className="feature-wrap icons" style={{
-                                            color: vendorTitleColor,
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'bottom',
-                                            fontWeight: 'bold',
-                                            minHeight: '60vh',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            width: '100vw',
-                                        }}>
-                                            <div className="feature-content icons">
-                                                <h4 className="black-text"
-                                                    style={{color: vendorTitleColor}}>Kundenbeziehung</h4>
-                                                <p className="paragraph">Deine Angebote erreichen innerhalb Sekunden
-                                                    nicht
-                                                    nur
-                                                    deine
-                                                    Stammkundschaft und all jene, die deinem Unternehmen folgen, sie
-                                                    sind
-                                                    auch
-                                                    sichtbar
-                                                    für jeden Loremio-Nutzer im Umkreis von 100km.</p>
-                                            </div>
-                                            <div className="feature-content icons">
-
-                                                <h4 className="black-text" style={{color: vendorTitleColor}}>Absatz-
-                                                    und Werbekanal</h4>
-                                                <p className="paragraph">Du erhältst einen exklusiven Werbekanal -
-                                                    die
-                                                    Taschen
-                                                    deiner
-                                                    Stammkundschaft! Nutze ki um deine Produkte kostenlos zu
-                                                    beschreiben und
-                                                    wir stellen sicher, dass deine Angebote auch wirklich die
-                                                    Kunden erreichen, die sie sehen möchten.</p>
-                                            </div>
-                                            <div className="feature-content icons">
-
-                                                <h4 className="black-text"
-                                                    style={{color: vendorTitleColor}}>Digitalisierung</h4>
-                                                <p className="paragraph">Dir wird nicht nur für dein Unternehmen eine
-                                                    digitale Präsenz geboten, sondern auch für deine Aktionen und
-                                                    Angebote. Die Informationen sind nicht nur über die mobile
-                                                    Applikation aufrufbar, sondern auch übers Web.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div>
+                                    <VendorHeader/>
                                 </div>
+                                {/*{ShowExtraFeaturesForVendor()}*/}
 
                                 <div>
                                     <ShowFeaturesForVendors/>
