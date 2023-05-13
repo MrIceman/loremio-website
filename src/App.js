@@ -63,7 +63,8 @@ function App() {
                 setShowOffer(true)
             })
         }
-
+        console.log("window.location.href")
+        console.log(window.location.href)
         const email = window.location.href.indexOf('/auth/reset/') !== -1 ?
             window.location.href.substring(
                 window.location.href.indexOf("/auth/reset/") + 15,
