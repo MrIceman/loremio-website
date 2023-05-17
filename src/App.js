@@ -67,7 +67,7 @@ function App() {
         console.log(window.location.href)
         const email = window.location.href.indexOf('/auth/reset/') !== -1 ?
             window.location.href.substring(
-                window.location.href.indexOf("/auth/reset/") + 15,
+                window.location.href.indexOf("/auth/reset/") + 12,
                 window.location.href.lastIndexOf("/?mode=resetPassword&oobCode=")
             ) : -1;
         console.log("email");
