@@ -13,7 +13,7 @@ import {VendorHeader} from "./presentation/vendorHeaderView";
 import {UserHeader} from "./presentation/userHeaderView";
 import {HolDieApp} from "./presentation/getTheAppView";
 import {vendorBgColor} from "./consts";
-// import ReactPlayer from 'react-player';
+import YouTube from "react-youtube";
 
 const {Header, Content, Footer} = Layout
 
@@ -24,6 +24,20 @@ function App() {
     const [showOffer, setShowOffer] = useState(!!offerResponse)
     const [showPWReset, setShowPWReset] = useState()
     const [width, setWidth] = useState(window.innerWidth);
+
+
+    const videoOptions = {
+        height: `${width / 1.64}`,
+        width: `${width * 0.95}`,
+        playerVars: {
+            autoplay: 1,
+            controls: 0,
+            rel: 0,
+            showinfo: 0,
+            mute: 0,
+            loop: 1
+        }
+    };
 
     // vendor values
     const navigate = (e) => {
@@ -41,6 +55,7 @@ function App() {
     }, []);
 
     useEffect(() => {
+        console.log(`window.location.href - window.location.href - `, window.location.href)
         if (window.location.href.indexOf('/unternehmer') !== -1) {
             setTab('2');
             navigate({key: '2'});
@@ -182,6 +197,7 @@ function App() {
     //         </div>
     //     </div>;
     // }
+    console.log(`tab - tab - `, tab)
     return (
         <>
 
@@ -208,14 +224,6 @@ function App() {
                         <Space direction='vertical' size={width < 1340 ? 180 : 320}>
                             {!showPWReset && tab === '1' &&
                             <>
-                                {/*<div>*/}
-                                {/*    <ReactPlayer*/}
-                                {/*        url={"https://player.odycdn.com/api/v4/streams/free/ohne-beine/6beccb1b2f4ebfcaf0b9aedf74dd4c5759a5864c/e60e1e"}*/}
-                                {/*        playing={true}*/}
-                                {/*        loop={true}*/}
-                                {/*        width={200} height={200}*/}
-                                {/*    />*/}
-                                {/*</div>*/}
                                 <div>
                                     <UserHeader width={width}/>
                                 </div>
@@ -233,6 +241,9 @@ function App() {
 
                             {!showPWReset && tab === '2' &&
                             <>
+                                <div>
+                                    <YouTube videoId="d0Mz5caxmk0" opts={videoOptions} width="1000" height="1000" />
+                                </div>
                                 <div>
                                     <VendorHeader width={width}/>
                                 </div>
