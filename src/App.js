@@ -1,22 +1,22 @@
-import {Avatar, Button, Layout, Menu, Space} from 'antd';
+import { Avatar, Button, Layout, Menu, Space } from 'antd';
 import './App.css';
 import '../src/style/custom-antd.css';
 import {useEffect, useState} from 'react';
 import {getPush} from './data/vendor';
 import PWReset from './PWReset';
 import logo from './assets/loremio.png';
-import {Offer} from "./presentation/offerView";
-import {ShowFeaturesForInvestors} from "./presentation/investoresFeautesView";
-import {ShowFeaturesForVendors} from "./presentation/vendorsFeaturesView";
-import {ShowFeatures} from "./presentation/userFeatureView";
-import {VendorHeader} from "./presentation/vendorHeaderView";
-import {UserHeader} from "./presentation/userHeaderView";
-import {HolDieApp} from "./presentation/getTheAppView";
-import {vendorBgColor, vendorHeroTitle, vendorTitleColor} from "./consts";
+import { Offer } from "./presentation/offerView";
+import { ShowFeaturesForInvestors } from "./presentation/investoresFeautesView";
+import { ShowFeaturesForVendors } from "./presentation/vendorsFeaturesView";
+import { ShowFeatures } from "./presentation/userFeatureView";
+import { VendorHeader } from "./presentation/vendorHeaderView";
+import { UserHeader } from "./presentation/userHeaderView";
+import { HolDieApp } from "./presentation/getTheAppView";
+import { vendorBgColor } from "./consts";
 import YouTube from "react-youtube";
 import Newsletter from "./presentation/newsletter";
 
-const {Header, Content, Footer} = Layout
+const { Header, Content, Footer } = Layout
 
 function App() {
 
@@ -28,8 +28,8 @@ function App() {
 
 
     const videoOptions = {
-        height: `${width / 1.64}`,
-        width: `${width * 0.95}`,
+        height: width / 1.64 < 700 ? `${width / 1.64}` : '700',
+        width: width * 0.95 < 1200 ? `${width * 0.95}` : '1200',
         playerVars: {
             autoplay: 1,
             controls: 0,
@@ -59,10 +59,10 @@ function App() {
         console.log(`window.location.href - window.location.href - `, window.location.href)
         if (window.location.href.indexOf('/unternehmer') !== -1) {
             setTab('2');
-            navigate({key: '2'});
+            navigate({ key: '2' });
         } else {
             setTab('1')
-            navigate({key: '1'})
+            navigate({ key: '1' })
         }
         const offer = window.location.href.indexOf('offer=') !== -1 ? window.location.href.substring(window.location.href.indexOf('offer=') + 6) : -1;
         if (offer !== -1) {
@@ -79,7 +79,7 @@ function App() {
             ) : -1;
         const oobCode = window.location.href.substring(window.location.href.indexOf("oobCode=") + 8)
         if (email !== -1) {
-            setShowPWReset({email, oobCode})
+            setShowPWReset({ email, oobCode })
         }
     }, [])
 
@@ -125,14 +125,14 @@ function App() {
                             }
 
                             {!showPWReset && tab === '2' &&
-                            <>
-                                <div>
-                                    <YouTube videoId="d0Mz5caxmk0" opts={videoOptions} width="1000" height="1000"/>
-                                </div>
-                                <div>
-                                    <VendorHeader width={width}/>
-                                </div>
-                                {/*{ShowExtraFeaturesForVendor()}*/}
+                                <>
+                                    <div className='youtube-cont' style={{textAlign: 'center'}}>
+                                        <YouTube videoId="d0Mz5caxmk0" opts={videoOptions} />
+                                    </div>
+                                    <div>
+                                        <VendorHeader width={width} />
+                                    </div>
+                                    {/*{ShowExtraFeaturesForVendor()}*/}
 
                                 <div>
                                     <ShowFeaturesForVendors width={width}/>
