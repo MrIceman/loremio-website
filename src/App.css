@@ -63,7 +63,7 @@
 
 .content__body {
   min-height: 280px;
-  padding: 145px;
+  padding: 50px 145px;
   background: #fff;
 }
 
@@ -344,7 +344,7 @@
   }
 
   .content__body__bomber {
-    font-size: 48px;
+    font-size: 40px;
     width: auto;
     line-height: 1.25;
     text-align: center;
