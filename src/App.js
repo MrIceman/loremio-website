@@ -106,6 +106,7 @@ function App() {
 
                 <Content>
                     <div className="content__body" style={{backgroundColor: tab === "2" ? vendorBgColor : "#fff"}}>
+                        <Newsletter/>
                         <Space direction='vertical' size={width < 1340 ? 180 : 320}>
                             {!showPWReset && tab === '1' &&
                             <>
@@ -162,7 +163,6 @@ function App() {
                             </>
                             }
                             {showPWReset && <PWReset data={showPWReset}/>}
-                            <Newsletter/>
                         </Space>
                     </div>
 
